@@ -4,8 +4,7 @@
 void	drawMap(t_pacman *pacman)
 {
 	extern int map[H][W];
-	
-	sdlRenderClear(pacman);
+
 	
 	SDL_Rect  rect;
 	rect = (SDL_Rect) {0, 0, 30, 30};
@@ -52,7 +51,7 @@ void	drawMap(t_pacman *pacman)
 		}
 		rect.y += 30;
 	}
-	SDL_RenderPresent(pacman->sdl.renderer);
+	putText(pacman);
 
 }
 

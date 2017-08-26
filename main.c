@@ -44,15 +44,6 @@ int main(void)
 	
 
 	
-
-
-	
-	
-	
-	
-	
-
-	
 	
 	
 	while (!stop)
@@ -79,9 +70,13 @@ int main(void)
 					pacman->move = (t_pos){-1, 0};
 			}
 		}
-		
+		sdlRenderClear(pacman);
 		putPacman(pacman);
 		drawMap(pacman);
+		
+		
+		
+		SDL_RenderPresent(pacman->sdl.renderer);
 		SDL_Delay(250);
 		
 //		for(int i = 0; i < 22; i++)

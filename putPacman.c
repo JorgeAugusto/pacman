@@ -20,6 +20,7 @@ void putPacman(t_pacman *pacman)
 		{
 			pacman->score += 100;
 			printf("score %d\n\n", pacman->score);
+			
 		}
 		map[pacman->pac.y][pacman->pac.x] = 3;
 	}
