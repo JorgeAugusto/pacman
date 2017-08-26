@@ -32,6 +32,7 @@ typedef struct		s_pacman
 	
 	
 	int				stop;
+	int				score;
 
 	
 }					t_pacman;
@@ -41,6 +42,7 @@ void				sdlDestroy(t_pacman *pacman);
 void				sdlRenderClear(t_pacman *pacman);
 void				drawMap(t_pacman *pacman);
 void				putPacman(t_pacman *pacman);
+void				drawCircle(t_pacman *pacman, t_pos center, int radius);
 
 //int map[H][W];
 

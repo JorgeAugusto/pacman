@@ -12,6 +12,7 @@
 		D26026271F51615D00D5000A /* initSdl.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026251F51615D00D5000A /* initSdl.c */; };
 		D26026291F51644E00D5000A /* drawMap.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026281F51644E00D5000A /* drawMap.c */; };
 		D260262B1F51B0CB00D5000A /* putPacman.c in Sources */ = {isa = PBXBuildFile; fileRef = D260262A1F51B0CB00D5000A /* putPacman.c */; };
+		D260262D1F51BAF100D5000A /* drawCircle.c in Sources */ = {isa = PBXBuildFile; fileRef = D260262C1F51BAF100D5000A /* drawCircle.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,7 @@
 		D26026261F51615D00D5000A /* pacman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pacman.h; sourceTree = "<group>"; };
 		D26026281F51644E00D5000A /* drawMap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawMap.c; sourceTree = "<group>"; };
 		D260262A1F51B0CB00D5000A /* putPacman.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putPacman.c; sourceTree = "<group>"; };
+		D260262C1F51BAF100D5000A /* drawCircle.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawCircle.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		D260260D1F5160DF00D5000A = {
 			isa = PBXGroup;
 			children = (
+				D260262C1F51BAF100D5000A /* drawCircle.c */,
 				D260262A1F51B0CB00D5000A /* putPacman.c */,
 				D26026281F51644E00D5000A /* drawMap.c */,
 				D26026251F51615D00D5000A /* initSdl.c */,
@@ -136,6 +139,7 @@
 				D26026211F51612C00D5000A /* main.c in Sources */,
 				D260262B1F51B0CB00D5000A /* putPacman.c in Sources */,
 				D26026271F51615D00D5000A /* initSdl.c in Sources */,
+				D260262D1F51BAF100D5000A /* drawCircle.c in Sources */,
 				D26026291F51644E00D5000A /* drawMap.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
