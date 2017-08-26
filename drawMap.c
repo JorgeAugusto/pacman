@@ -40,9 +40,9 @@ void	drawMap(t_pacman *pacman)
 			else if (map[y][x] == 3)
 			{
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 0, 255);
-//				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 15);
-				SDL_RenderFillRect(pacman->sdl.renderer, &rect);
-				SDL_RenderDrawRect(pacman->sdl.renderer, &rect);
+				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 15);
+//				SDL_RenderFillRect(pacman->sdl.renderer, &rect);
+//				SDL_RenderDrawRect(pacman->sdl.renderer, &rect);
 
 			}
 			

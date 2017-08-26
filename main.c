@@ -32,9 +32,11 @@ int main(void)
 	
 	
 	stop = 0;
-	pacman = (t_pacman *)malloc(sizeof(pacman));
+	
+	pacman = (t_pacman *)malloc(sizeof(t_pacman));
 	sdlInit(pacman);
 	
+	pacman->score = 0;
 	pacman->move = (t_pos){0, 0};
 	pacman->pac = (t_pos){17, 20};
 	putPacman(pacman);
@@ -77,20 +79,21 @@ int main(void)
 					pacman->move = (t_pos){-1, 0};
 			}
 		}
-		SDL_Delay(250);
+		
 		putPacman(pacman);
 		drawMap(pacman);
+		SDL_Delay(250);
 		
-		for(int i = 0; i < 22; i++)
-		{
-			for(int j = 0; j < 19; j++)
-			{
-				printf("%d, ", map[i][j]);
-			}
-			printf("\n");
-			
-		}
-		printf("\n\n");
+//		for(int i = 0; i < 22; i++)
+//		{
+//			for(int j = 0; j < 19; j++)
+//			{
+//				printf("%d, ", map[i][j]);
+//			}
+//			printf("\n");
+//			
+//		}
+//		printf("\n\n");
 	}
 	
 	
