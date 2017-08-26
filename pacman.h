@@ -27,6 +27,8 @@ typedef struct		s_pos
 typedef struct		s_pacman
 {
 	t_sdl			sdl;
+	t_pos			pac;
+	t_pos			move;
 	
 	
 	int				stop;
@@ -38,6 +40,7 @@ void				sdlInit(t_pacman *pacman);
 void				sdlDestroy(t_pacman *pacman);
 void				sdlRenderClear(t_pacman *pacman);
 void				drawMap(t_pacman *pacman);
+void				putPacman(t_pacman *pacman);
 
 //int map[H][W];
 

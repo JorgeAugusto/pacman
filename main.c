@@ -29,24 +29,20 @@ int main(void)
 	int			stop;
 	t_pacman	*pacman;
 	
+	
+	
 	stop = 0;
 	pacman = (t_pacman *)malloc(sizeof(pacman));
 	sdlInit(pacman);
+	
+	pacman->move = (t_pos){0, 0};
+	pacman->pac = (t_pos){17, 20};
+	putPacman(pacman);
 	drawMap(pacman);
 	
 
 	
 
-	
-//	for(int i = 0; i < 22; i++)
-//	{
-//		for(int j = 0; j < 19; j++)
-//		{
-//			printf("%d, ", map[i][j]);
-//		}
-//		printf("\n");
-//
-//	}
 
 	
 	
@@ -71,24 +67,35 @@ int main(void)
 					map[4][4] = 3;
 					drawMap(pacman);
 				}
-//				else if (map->sdl.e.key.keysym.sym == SDLK_RIGHT)
-//					map->move = (t_pos){1, 0, 0};
-//				else if (map->sdl.e.key.keysym.sym == SDLK_LEFT)
-//					map->move = (t_pos){-1, 0, 0};
-//				else if (map->sdl.e.key.keysym.sym == SDLK_UP)
-//					map->move = (t_pos){0, -1, 0};
-//				else if (map->sdl.e.key.keysym.sym == SDLK_DOWN)
-//					map->move = (t_pos){0, 1, 0};
+				else if (pacman->sdl.e.key.keysym.sym == SDLK_UP)
+					pacman->move = (t_pos){0, -1};
+				else if (pacman->sdl.e.key.keysym.sym == SDLK_DOWN)
+					pacman->move = (t_pos){0, 1};
+				else if (pacman->sdl.e.key.keysym.sym == SDLK_RIGHT)
+					pacman->move = (t_pos){1, 0};
+				else if (pacman->sdl.e.key.keysym.sym == SDLK_LEFT)
+					pacman->move = (t_pos){-1, 0};
+				putPacman(pacman);
+				drawMap(pacman);
+				
+					for(int i = 0; i < 22; i++)
+					{
+						for(int j = 0; j < 19; j++)
+						{
+							printf("%d, ", map[i][j]);
+						}
+						printf("\n");
+				
+					}
+				printf("\n\n");
 			}
 		}
 	}
 	
 	
-	
-	
-	
+
 	
 
-	sdlDestroy(pacman);
+//	sdlDestroy(pacman);
 	return 0;
 }

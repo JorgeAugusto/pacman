@@ -28,7 +28,7 @@ void	drawMap(t_pacman *pacman)
 			}
 			else if (map[y][x] == 3)
 			{
-				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 255, 255);
+				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 0, 255);
 				SDL_RenderFillRect(pacman->sdl.renderer, &rect);
 
 			}

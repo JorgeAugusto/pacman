@@ -10,7 +10,8 @@
 		D26026211F51612C00D5000A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026201F51612C00D5000A /* main.c */; };
 		D26026241F51614E00D5000A /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26026231F51614E00D5000A /* SDL2.framework */; };
 		D26026271F51615D00D5000A /* initSdl.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026251F51615D00D5000A /* initSdl.c */; };
-		D26026291F51644E00D5000A /* initMap.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026281F51644E00D5000A /* initMap.c */; };
+		D26026291F51644E00D5000A /* drawMap.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026281F51644E00D5000A /* drawMap.c */; };
+		D260262B1F51B0CB00D5000A /* putPacman.c in Sources */ = {isa = PBXBuildFile; fileRef = D260262A1F51B0CB00D5000A /* putPacman.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +32,8 @@
 		D26026231F51614E00D5000A /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		D26026251F51615D00D5000A /* initSdl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = initSdl.c; sourceTree = "<group>"; };
 		D26026261F51615D00D5000A /* pacman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pacman.h; sourceTree = "<group>"; };
-		D26026281F51644E00D5000A /* initMap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = initMap.c; sourceTree = "<group>"; };
+		D26026281F51644E00D5000A /* drawMap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawMap.c; sourceTree = "<group>"; };
+		D260262A1F51B0CB00D5000A /* putPacman.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putPacman.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +51,8 @@
 		D260260D1F5160DF00D5000A = {
 			isa = PBXGroup;
 			children = (
-				D26026281F51644E00D5000A /* initMap.c */,
+				D260262A1F51B0CB00D5000A /* putPacman.c */,
+				D26026281F51644E00D5000A /* drawMap.c */,
 				D26026251F51615D00D5000A /* initSdl.c */,
 				D26026261F51615D00D5000A /* pacman.h */,
 				D26026201F51612C00D5000A /* main.c */,
@@ -131,8 +134,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D26026211F51612C00D5000A /* main.c in Sources */,
+				D260262B1F51B0CB00D5000A /* putPacman.c in Sources */,
 				D26026271F51615D00D5000A /* initSdl.c in Sources */,
-				D26026291F51644E00D5000A /* initMap.c in Sources */,
+				D26026291F51644E00D5000A /* drawMap.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
