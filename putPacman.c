@@ -18,9 +18,13 @@ void putPacman(t_pacman *pacman)
 			
 		if (map[pacman->pac.y][pacman->pac.x] == 1)
 		{
-			pacman->score += 100;
+			pacman->score += 10;
 			printf("score %d\n\n", pacman->score);
-			
+		}
+		else if (map[pacman->pac.y][pacman->pac.x] == 4)
+		{
+			pacman->score += 50;
+			printf("score %d\n\n", pacman->score);
 		}
 		map[pacman->pac.y][pacman->pac.x] = 3;
 	}

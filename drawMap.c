@@ -22,11 +22,16 @@ void	drawMap(t_pacman *pacman)
 			}
 			else if (map[y][x] == 1)
 			{
-				
-				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 0, 255);
+				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 255, 255);
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 30/2, rect.y + 30/2);
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 30/2, rect.y + 32/2);
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 32/2, rect.y + 32/2);
+				
+			}
+			else if (map[y][x] == 4)
+			{
+				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 255, 255);
+				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 7);
 				
 			}
 			else if (map[y][x] == 2)
