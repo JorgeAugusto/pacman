@@ -84,14 +84,14 @@ void putGhostRed(t_pacman *pacman)
 
 void putGhostBlue(t_pacman *pacman)
 {
-
+	
 	extern int	map[H][W];
 	static int	tmpPos = 1;
 	int			tmp;
 	int			len = 5000;
-
-//	if (tmpPos == 3)
-//		exit(0);
+	
+	//	if (tmpPos == 3)
+	//		exit(0);
 	map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x + 0] = tmpPos;
 	
 	
@@ -152,5 +152,78 @@ void putGhostBlue(t_pacman *pacman)
 	pacman->ghostBlueRect.y = pacman->ghostBlue.y * 30;
 	pacman->ghostBlueRect.w = 30;
 	pacman->ghostBlueRect.h = 30;
+	
+}
 
+void putGhostPink(t_pacman *pacman)
+{
+	
+	extern int	map[H][W];
+	static int	tmpPos = 1;
+	int			tmp;
+	int			len = 5000;
+	
+	//	if (tmpPos == 3)
+	//		exit(0);
+	map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 0] = tmpPos;
+	
+	
+	if (map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2)
+						+ pow(pacman->ghostPink.y + 1 - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostPinkMove.x = 0;
+			pacman->ghostPinkMove.y = 1;
+		}
+		tmpPos = map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0];
+	}
+	
+	if (map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2)
+						+ pow(pacman->ghostPink.y - 1 - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostPinkMove.x = 0;
+			pacman->ghostPinkMove.y = -1;
+		}
+		tmpPos = map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0];
+	}
+	
+	if (map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostPink.x + 1 - pacman->pac.x,2)
+						+ pow(pacman->ghostPink.y - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostPinkMove.x = 1;
+			pacman->ghostPinkMove.y = 0;
+		}
+		tmpPos = map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1];
+	}
+	
+	if (map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostPink.x - 1 - pacman->pac.x,2)
+						+ pow(pacman->ghostPink.y - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostPinkMove.x = -1;
+			pacman->ghostPinkMove.y = 0;
+		}
+		tmpPos = map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1];
+	}
+	
+	pacman->ghostPink.x += pacman->ghostPinkMove.x;
+	pacman->ghostPink.y += pacman->ghostPinkMove.y;
+	
+	map[pacman->ghostPink.y][pacman->ghostPink.x] = 7;
+	
+	pacman->ghostPinkRect.x = pacman->ghostPink.x * 30;
+	pacman->ghostPinkRect.y = pacman->ghostPink.y * 30;
+	pacman->ghostPinkRect.w = 30;
+	pacman->ghostPinkRect.h = 30;
+	
 }

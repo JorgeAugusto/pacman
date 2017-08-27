@@ -35,17 +35,24 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->ghostBlue = (t_pos){1, 4};
 	pacman->ghostPink = (t_pos){16, 4};
 	
+	
+	pacman->pacImageUp = IMG_Load("image/pacmanUp.png");
+	pacman->pacImageDown = IMG_Load("image/pacmanDown.png");
+	pacman->pacImageLeft = IMG_Load("image/pacmanLeft.png");
+	pacman->pacImageRight = IMG_Load("image/pacmanRight.png");
+	pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageLeft);
+	
 	pacman->ghostRedImage = IMG_Load("image/red.png");
 	pacman->ghostRedTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostRedImage);
 	
 	pacman->ghostBlueImage = IMG_Load("image/Blue.png");
 	pacman->ghostBlueTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostBlueImage);
 	
-//	pacman->ghostYellowImage = IMG_Load("image/yellow.png");
-//	pacman->ghostYellowTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostYellowImage);
-//	
-//	pacman->ghostPinkImage = IMG_Load("image/pink.png");
-//	pacman->ghostPinkTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostPinkImage);
+	pacman->ghostYellowImage = IMG_Load("image/yellow.png");
+	pacman->ghostYellowTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostYellowImage);
+	
+	pacman->ghostPinkImage = IMG_Load("image/pink.png");
+	pacman->ghostPinkTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostPinkImage);
 }
 
 int main(void)
@@ -91,7 +98,10 @@ int main(void)
 		if (ghost++ % 2)
 			putGhostRed(pacman);
 		else
+		{
 			putGhostBlue(pacman);
+			putGhostPink(pacman);
+		}
 		
 		
 		SDL_RenderPresent(pacman->sdl.renderer);

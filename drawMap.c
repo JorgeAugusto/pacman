@@ -13,14 +13,14 @@ void	drawMap(t_pacman *pacman)
 		rect.x = 0;
 		for (int x = 0; x < 19; x++)
 		{
-			if (map[y][x] == 0)
+			if (map[y][x] == 0) // empty place
 			{
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 0, 0, 0, 255);
 				SDL_RenderFillRect(pacman->sdl.renderer, &rect);
 				SDL_RenderDrawRect(pacman->sdl.renderer, &rect);
 				
 			}
-			else if (map[y][x] == 1)
+			else if (map[y][x] == 1) // coin
 			{
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 255, 255);
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 30/2, rect.y + 30/2);
@@ -28,24 +28,37 @@ void	drawMap(t_pacman *pacman)
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 32/2, rect.y + 32/2);
 				
 			}
-			else if (map[y][x] == 4)
+			else if (map[y][x] == 4) // big coin
 			{
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 255, 255);
 				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 7);
 				
 			}
-			else if (map[y][x] == 2)
+			else if (map[y][x] == 2) // wall
 			{
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 23, 23, 110, 255);
 				SDL_RenderFillRect(pacman->sdl.renderer, &rect);
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 50, 50, 50, 255);
 				SDL_RenderDrawRect(pacman->sdl.renderer, &rect);
 			}
-			else if (map[y][x] == 3)
+			else if (map[y][x] == 3) //pacman
 			{
-				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 0, 255);
-				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 15);
+				pacman->pacRect = (SDL_Rect){rect.x, rect.y, 30, 30};
+				if (pacman->pacMove.x == 0 && pacman->pacMove.y == 1)
+					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageDown);
 				
+				else if (pacman->pacMove.x == 0 && pacman->pacMove.y == -1)
+					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageUp);
+				
+				else if (pacman->pacMove.x == 1 && pacman->pacMove.y == 0)
+					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageRight);
+				
+				else if (pacman->pacMove.x == -1 && pacman->pacMove.y == 0)
+					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageLeft);
+				
+				
+				
+				SDL_RenderCopy(pacman->sdl.renderer, pacman->pacTexture, NULL, &(pacman->pacRect));
 			}
 			else if (map[y][x] == 5) //red ghost
 				SDL_RenderCopy(pacman->sdl.renderer, pacman->ghostRedTexture, NULL, &(pacman->ghostRedRect));
