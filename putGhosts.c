@@ -8,50 +8,76 @@ void putGhostRed(t_pacman *pacman)
 	static int	tmpPos = 0;
 	int			tmp;
 	int			len = 5000;
+	int			len2 = 0;
 	
-	//	if (tmpPos == 3)
-	//		exit(0);
 	map[pacman->ghostRed.y + 0][pacman->ghostRed.x + 0] = tmpPos;
-	
 	
 	if (map[pacman->ghostRed.y + 1][pacman->ghostRed.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostRed.x - pacman->pac.x,2) + pow(pacman->ghostRed.y + 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostRed.x - pacman->pac.x,2) + pow(pacman->ghostRed.y + 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostRedMove = (t_pos) {0, 1};
 			tmpPos = map[pacman->ghostRed.y + 1][pacman->ghostRed.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostRed.x - pacman->pac.x,2) + pow(pacman->ghostRed.y + 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostRedMove = (t_pos) {0, 1};
+				tmpPos = map[pacman->ghostRed.y + 1][pacman->ghostRed.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostRed.y - 1][pacman->ghostRed.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostRed.x - pacman->pac.x,2) + pow(pacman->ghostRed.y - 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostRed.x - pacman->pac.x,2) + pow(pacman->ghostRed.y - 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostRedMove = (t_pos) {0, -1};
 			tmpPos = map[pacman->ghostRed.y - 1][pacman->ghostRed.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostRed.x - pacman->pac.x,2) + pow(pacman->ghostRed.y - 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostRedMove = (t_pos) {0, -1};
+				tmpPos = map[pacman->ghostRed.y - 1][pacman->ghostRed.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostRed.y + 0][pacman->ghostRed.x + 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostRed.x + 1 - pacman->pac.x,2) + pow(pacman->ghostRed.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostRed.x + 1 - pacman->pac.x,2) + pow(pacman->ghostRed.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostRedMove = (t_pos) {1, 0};
 			tmpPos = map[pacman->ghostRed.y + 0][pacman->ghostRed.x + 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostRed.x + 1 - pacman->pac.x,2) + pow(pacman->ghostRed.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostRedMove = (t_pos) {1, 0};
+				tmpPos = map[pacman->ghostRed.y + 0][pacman->ghostRed.x + 1];
+			}
 	}
 	
 	if (map[pacman->ghostRed.y + 0][pacman->ghostRed.x - 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostRed.x - 1 - pacman->pac.x,2) + pow(pacman->ghostRed.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostRed.x - 1 - pacman->pac.x,2) + pow(pacman->ghostRed.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostRedMove = (t_pos) {-1, 0};
 			tmpPos = map[pacman->ghostRed.y + 0][pacman->ghostRed.x - 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostRed.x - 1 - pacman->pac.x,2) + pow(pacman->ghostRed.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostRedMove = (t_pos) {-1, 0};
+				tmpPos = map[pacman->ghostRed.y + 0][pacman->ghostRed.x - 1];
+			}
 	}
 	if (tmpPos == 3)
 	{
@@ -77,6 +103,7 @@ void putGhostBlue(t_pacman *pacman)
 	static int	tmpPos = 1;
 	int			tmp;
 	int			len = 5000;
+	int			len2 = 0;
 	
 	//	if (tmpPos == 3)
 	//		exit(0);
@@ -85,42 +112,70 @@ void putGhostBlue(t_pacman *pacman)
 	
 	if (map[pacman->ghostBlue.y + 1][pacman->ghostBlue.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2) + pow(pacman->ghostBlue.y + 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2) + pow(pacman->ghostBlue.y + 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostBlueMove = (t_pos) {0, 1};
 			tmpPos = map[pacman->ghostBlue.y + 1][pacman->ghostBlue.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2) + pow(pacman->ghostBlue.y + 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostBlueMove = (t_pos) {0, 1};
+				tmpPos = map[pacman->ghostBlue.y + 1][pacman->ghostBlue.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostBlue.y - 1][pacman->ghostBlue.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2) + pow(pacman->ghostBlue.y - 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2) + pow(pacman->ghostBlue.y - 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostBlueMove = (t_pos) {0, -1};
 			tmpPos = map[pacman->ghostBlue.y - 1][pacman->ghostBlue.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2) + pow(pacman->ghostBlue.y - 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostBlueMove = (t_pos) {0, -1};
+				tmpPos = map[pacman->ghostBlue.y - 1][pacman->ghostBlue.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x + 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostBlue.x + 1 - pacman->pac.x,2) + pow(pacman->ghostBlue.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostBlue.x + 1 - pacman->pac.x,2) + pow(pacman->ghostBlue.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostBlueMove = (t_pos) {1, 0};
 			tmpPos = map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x + 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostBlue.x + 1 - pacman->pac.x,2) + pow(pacman->ghostBlue.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostBlueMove = (t_pos) {1, 0};
+				tmpPos = map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x + 1];
+			}
 	}
 	
 	if (map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x - 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostBlue.x - 1 - pacman->pac.x,2) + pow(pacman->ghostBlue.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostBlue.x - 1 - pacman->pac.x,2) + pow(pacman->ghostBlue.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostBlueMove = (t_pos) {-1, 0};
 			tmpPos = map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x - 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostBlue.x - 1 - pacman->pac.x,2) + pow(pacman->ghostBlue.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostBlueMove = (t_pos) {-1, 0};
+				tmpPos = map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x - 1];
+			}
 	}
 	if (tmpPos == 3)
 	{
@@ -145,6 +200,7 @@ void putGhostPink(t_pacman *pacman)
 	static int	tmpPos = 1;
 	int			tmp;
 	int			len = 5000;
+	int			len2 = 0;
 	
 	//	if (tmpPos == 3)
 	//		exit(0);
@@ -153,45 +209,76 @@ void putGhostPink(t_pacman *pacman)
 	
 	if (map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2) + pow(pacman->ghostPink.y + 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2) + pow(pacman->ghostPink.y + 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostPinkMove = (t_pos) {0, 1};
 			tmpPos = map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2) + pow(pacman->ghostPink.y + 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostPinkMove = (t_pos) {0, 1};
+				tmpPos = map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2)
-						+ pow(pacman->ghostPink.y - 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2)
+											+ pow(pacman->ghostPink.y - 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostPinkMove = (t_pos) {0, -1};
 			tmpPos = map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostPink.x - pacman->pac.x,2)
+												+ pow(pacman->ghostPink.y - 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostPinkMove = (t_pos) {0, -1};
+				tmpPos = map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostPink.x + 1 - pacman->pac.x,2)
-						+ pow(pacman->ghostPink.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostPink.x + 1 - pacman->pac.x,2)
+											+ pow(pacman->ghostPink.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostPinkMove = (t_pos) {1, 0};
 			tmpPos = map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostPink.x + 1 - pacman->pac.x,2)
+												+ pow(pacman->ghostPink.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostPinkMove = (t_pos) {1, 0};
+				tmpPos = map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1];
+			}
 	}
 	
 	if (map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostPink.x - 1 - pacman->pac.x,2)
-						+ pow(pacman->ghostPink.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostPink.x - 1 - pacman->pac.x,2)
+											+ pow(pacman->ghostPink.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostPinkMove = (t_pos) {-1, 0};
 			tmpPos = map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostPink.x - 1 - pacman->pac.x,2)
+												+ pow(pacman->ghostPink.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostPinkMove = (t_pos) {-1, 0};
+				tmpPos = map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1];
+			}
 	}
 	if (tmpPos == 3)
 	{
@@ -216,6 +303,7 @@ void putGhostYellow(t_pacman *pacman)
 	static int	tmpPos = 1;
 	int			tmp;
 	int			len = 5000;
+	int			len2 = 0;
 	
 	//	if (tmpPos == 3)
 	//		exit(0);
@@ -224,46 +312,78 @@ void putGhostYellow(t_pacman *pacman)
 	
 	if (map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2)
-						+ pow(pacman->ghostYellow.y + 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2)
+											+ pow(pacman->ghostYellow.y + 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostYellowMove = (t_pos) {0, 1};
 			tmpPos = map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2)
+												+ pow(pacman->ghostYellow.y + 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostYellowMove = (t_pos) {0, 1};
+				tmpPos = map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2)
-						+ pow(pacman->ghostYellow.y - 1 - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2)
+											+ pow(pacman->ghostYellow.y - 1 - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostYellowMove = (t_pos) {0, -1};
 			tmpPos = map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2)
+												+ pow(pacman->ghostYellow.y - 1 - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostYellowMove = (t_pos) {0, -1};
+				tmpPos = map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0];
+			}
 	}
 	
 	if (map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostYellow.x + 1 - pacman->pac.x,2)
-						+ pow(pacman->ghostYellow.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x + 1 - pacman->pac.x,2)
+											+ pow(pacman->ghostYellow.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostYellowMove = (t_pos) {1, 0};
 			tmpPos = map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostYellow.x + 1 - pacman->pac.x,2)
+												+ pow(pacman->ghostYellow.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostYellowMove = (t_pos) {1, 0};
+				tmpPos = map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1];
+			}
 	}
 	
 	if (map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1] != 2)
 	{
-		if ((tmp = sqrt(pow(pacman->ghostYellow.x - 1 - pacman->pac.x,2)
-						+ pow(pacman->ghostYellow.y - pacman->pac.y,2))) < len)
+		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - 1 - pacman->pac.x,2)
+											+ pow(pacman->ghostYellow.y - pacman->pac.y,2))) < len)
 		{
 			len = tmp;
 			pacman->ghostYellowMove = (t_pos) {-1, 0};
 			tmpPos = map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1];
 		}
+		else
+			if (pacman->eat != 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - 1 - pacman->pac.x,2)
+												+ pow(pacman->ghostYellow.y - pacman->pac.y,2))) > len2)
+			{
+				len2 = tmp;
+				pacman->ghostYellowMove = (t_pos) {-1, 0};
+				tmpPos = map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1];
+			}
 	}
 	if (tmpPos == 3)
 	{

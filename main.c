@@ -117,6 +117,10 @@ int main(void)
 		}
 		
 		
+		if (pacman->eat != 0)
+			pacman->eat--;
+		
+		
 		SDL_RenderPresent(pacman->sdl.renderer);
 		SDL_Delay(250);
 		
