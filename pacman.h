@@ -34,7 +34,10 @@ typedef struct		s_pacman
 {
 	t_sdl			sdl;
 	t_pos			pac;
-	t_pos			move;
+	t_pos			pacMove;
+	
+	t_pos			ghostRed;
+	t_pos			ghostRedMove;
 	
 	
 	int				stop;
@@ -51,6 +54,7 @@ void				putPacman(t_pacman *pacman);
 void				drawCircle(t_pacman *pacman, t_pos center, int radius);
 
 void				putText(t_pacman *pacman);
+void				putGhostRed(t_pacman *pacman);
 
 //int map[H][W];
 

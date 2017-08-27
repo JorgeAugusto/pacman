@@ -37,8 +37,12 @@ int main(void)
 	sdlInit(pacman);
 	
 	pacman->score = 0;
-	pacman->move = (t_pos){0, 0};
+	pacman->pacMove = (t_pos){0, 0};
 	pacman->pac = (t_pos){17, 20};
+	
+//	pacman->pacMove = (t_pos){0, 0};
+	pacman->ghostRed = (t_pos){10, 10};
+	
 	putPacman(pacman);
 	drawMap(pacman);
 	
@@ -61,18 +65,19 @@ int main(void)
 					drawMap(pacman);
 				}
 				else if (pacman->sdl.e.key.keysym.sym == SDLK_UP)
-					pacman->move = (t_pos){0, -1};
+					pacman->pacMove = (t_pos){0, -1};
 				else if (pacman->sdl.e.key.keysym.sym == SDLK_DOWN)
-					pacman->move = (t_pos){0, 1};
+					pacman->pacMove = (t_pos){0, 1};
 				else if (pacman->sdl.e.key.keysym.sym == SDLK_RIGHT)
-					pacman->move = (t_pos){1, 0};
+					pacman->pacMove = (t_pos){1, 0};
 				else if (pacman->sdl.e.key.keysym.sym == SDLK_LEFT)
-					pacman->move = (t_pos){-1, 0};
+					pacman->pacMove = (t_pos){-1, 0};
 			}
 		}
 		sdlRenderClear(pacman);
 		putPacman(pacman);
 		drawMap(pacman);
+		putGhostRed(pacman);
 		
 		
 		
