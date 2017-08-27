@@ -55,8 +55,7 @@ void	drawMap(t_pacman *pacman)
 				
 				else if (pacman->pacMove.x == -1 && pacman->pacMove.y == 0)
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageLeft);
-				
-				
+
 				
 				SDL_RenderCopy(pacman->sdl.renderer, pacman->pacTexture, NULL, &(pacman->pacRect));
 			}

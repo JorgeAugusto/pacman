@@ -36,6 +36,7 @@ typedef struct		s_pacman
 	t_sdl			sdl;
 	t_pos			pac;
 	t_pos			pacMove;
+	SDL_Surface		*pacImage;
 	SDL_Surface		*pacImageUp;
 	SDL_Surface		*pacImageDown;
 	SDL_Surface		*pacImageLeft;

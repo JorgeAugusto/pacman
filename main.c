@@ -37,13 +37,12 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->ghostYellowMove = (t_pos){0, 0};
 	
 	pacman->pac = (t_pos){17, 20};
-	
 	pacman->ghostRed = (t_pos){9, 10};
 	pacman->ghostYellow = (t_pos){10, 10};
 	pacman->ghostBlue = (t_pos){1, 4};
 	pacman->ghostPink = (t_pos){16, 4};
 	
-	
+	pacman->pacImage = IMG_Load("image/pacman.png");
 	pacman->pacImageUp = IMG_Load("image/pacmanUp.png");
 	pacman->pacImageDown = IMG_Load("image/pacmanDown.png");
 	pacman->pacImageLeft = IMG_Load("image/pacmanLeft.png");
