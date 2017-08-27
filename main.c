@@ -24,31 +24,28 @@ int map[22][19]={
 
 #include "pacman.h"
 
-int main(void)
+static void	initDefault(t_pacman *pacman, int *stop)
 {
-	int			stop;
-	t_pacman	*pacman;
-	
-	
-	
-	stop = 0;
-	
-	pacman = (t_pacman *)malloc(sizeof(t_pacman));
-	sdlInit(pacman);
-	
+	*stop = 0;
 	pacman->score = 0;
 	pacman->pacMove = (t_pos){0, 0};
 	pacman->pac = (t_pos){17, 20};
 	
-//	pacman->pacMove = (t_pos){0, 0};
 	pacman->ghostRed = (t_pos){10, 10};
+}
+
+int main(void)
+{
+	int			stop;
+	t_pacman		*pacman;
+	static int	ghost = 0;
 	
+	pacman = (t_pacman *)malloc(sizeof(t_pacman));
+	
+	sdlInit(pacman);
+	initDefault(pacman, &stop);
 	putPacman(pacman);
 	drawMap(pacman);
-	
-
-	
-	
 	
 	while (!stop)
 	{
@@ -77,8 +74,8 @@ int main(void)
 		sdlRenderClear(pacman);
 		putPacman(pacman);
 		drawMap(pacman);
-		putGhostRed(pacman);
-		
+		if (ghost++ % 2)
+			putGhostRed(pacman);
 		
 		
 		SDL_RenderPresent(pacman->sdl.renderer);

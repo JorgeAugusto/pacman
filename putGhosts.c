@@ -8,7 +8,9 @@ void putGhostRed(t_pacman *pacman)
 	static int	tmpPos = 0;
 	int			tmp;
 	int			len = 5000;
-	
+
+//	if (tmpPos == 3)
+//		exit(0);
 	map[pacman->ghostRed.y + 0][pacman->ghostRed.x + 0] = tmpPos;
 	
 	
