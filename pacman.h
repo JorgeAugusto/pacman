@@ -7,6 +7,7 @@
 # include <unistd.h>
 # include <SDL2/SDL.h>
 # include <SDL2_ttf/SDL_ttf.h>
+# include <SDL2_image/SDL_image.h>
 # define WID 19*30
 # define HEIG 22*30+30
 # define W WID / 30
@@ -39,6 +40,9 @@ typedef struct		s_pacman
 	t_pos			ghostRed;
 	t_pos			ghostRedMove;
 	
+	t_pos			ghostBlue;
+	t_pos			ghostBlueMove;
+	
 	
 	int				stop;
 	int				score;
@@ -55,6 +59,7 @@ void				drawCircle(t_pacman *pacman, t_pos center, int radius);
 
 void				putText(t_pacman *pacman);
 void				putGhostRed(t_pacman *pacman);
+void				putGhostBlue(t_pacman *pacman);
 
 //int map[H][W];
 

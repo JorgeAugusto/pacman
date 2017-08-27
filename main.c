@@ -32,6 +32,7 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->pac = (t_pos){17, 20};
 	
 	pacman->ghostRed = (t_pos){10, 10};
+	pacman->ghostBlue = (t_pos){1, 1};
 }
 
 int main(void)
@@ -76,6 +77,8 @@ int main(void)
 		drawMap(pacman);
 		if (ghost++ % 2)
 			putGhostRed(pacman);
+//		else
+//			putGhostBlue(pacman);
 		
 		
 		SDL_RenderPresent(pacman->sdl.renderer);

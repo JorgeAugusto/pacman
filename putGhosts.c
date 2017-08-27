@@ -1,16 +1,19 @@
 
 #include "pacman.h"
 
+
+#include "pacman.h"
+
 void putGhostRed(t_pacman *pacman)
 {
-
+	
 	extern int	map[H][W];
 	static int	tmpPos = 0;
 	int			tmp;
 	int			len = 5000;
-
-//	if (tmpPos == 3)
-//		exit(0);
+	
+	//	if (tmpPos == 3)
+	//		exit(0);
 	map[pacman->ghostRed.y + 0][pacman->ghostRed.x + 0] = tmpPos;
 	
 	
@@ -67,32 +70,74 @@ void putGhostRed(t_pacman *pacman)
 	
 	map[pacman->ghostRed.y][pacman->ghostRed.x] = 5;
 	
-	
-	
-	
+}
 
+
+
+void putGhostBlue(t_pacman *pacman)
+{
+
+	extern int	map[H][W];
+	static int	tmpPos = 0;
+	int			tmp;
+	int			len = 5000;
+
+//	if (tmpPos == 3)
+//		exit(0);
+	map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x + 0] = tmpPos;
 	
-//	if (map[pacman->pac.y + pacman->pacMove.y][pacman->pac.x + pacman->pacMove.x] != 2)
-//	{
-//		map[pacman->pac.y][pacman->pac.x] = 0;
-//		pacman->pac.x += pacman->pacMove.x;
-//		pacman->pac.y += pacman->pacMove.y;
-//		
-//		if(pacman->pac.x == 0 && pacman->pac.y == 10)
-//			pacman->pac = (t_pos){18, 10};
-//		else if(pacman->pac.x == 18 && pacman->pac.y == 10)
-//			pacman->pac = (t_pos){0, 10};
-//		
-//		if (map[pacman->pac.y][pacman->pac.x] == 1)
-//		{
-//			pacman->score += 10;
-//			printf("score %d\n\n", pacman->score);
-//		}
-//		else if (map[pacman->pac.y][pacman->pac.x] == 4)
-//		{
-//			pacman->score += 50;
-//			printf("score %d\n\n", pacman->score);
-//		}
-//		map[pacman->pac.y][pacman->pac.x] = 3;
-//	}
+	
+	if (map[pacman->ghostBlue.y + 1][pacman->ghostBlue.x + 0] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2)
+						+ pow(pacman->ghostBlue.y + 1 - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostBlueMove.x = 0;
+			pacman->ghostBlueMove.y = 1;
+		}
+		tmpPos = map[pacman->ghostBlue.y + 1][pacman->ghostBlue.x + 0];
+	}
+	
+	if (map[pacman->ghostBlue.y - 1][pacman->ghostBlue.x + 0] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostBlue.x - pacman->pac.x,2)
+						+ pow(pacman->ghostBlue.y - 1 - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostBlueMove.x = 0;
+			pacman->ghostBlueMove.y = -1;
+		}
+		tmpPos = map[pacman->ghostBlue.y - 1][pacman->ghostBlue.x + 0];
+	}
+	
+	if (map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x + 1] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostBlue.x + 1 - pacman->pac.x,2)
+						+ pow(pacman->ghostBlue.y - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostBlueMove.x = 1;
+			pacman->ghostBlueMove.y = 0;
+		}
+		tmpPos = map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x + 1];
+	}
+	
+	if (map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x - 1] != 2)
+	{
+		if ((tmp = sqrt(pow(pacman->ghostBlue.x - 1 - pacman->pac.x,2)
+						+ pow(pacman->ghostBlue.y - pacman->pac.y,2))) < len)
+		{
+			len = tmp;
+			pacman->ghostBlueMove.x = -1;
+			pacman->ghostBlueMove.y = 0;
+		}
+		tmpPos = map[pacman->ghostBlue.y + 0][pacman->ghostBlue.x - 1];
+	}
+	
+	pacman->ghostBlue.x += pacman->ghostBlueMove.x;
+	pacman->ghostBlue.y += pacman->ghostBlueMove.y;
+	
+	map[pacman->ghostBlue.y][pacman->ghostBlue.x] = 5;
+
 }
