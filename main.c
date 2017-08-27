@@ -28,6 +28,7 @@ static void	initDefault(t_pacman *pacman, int *stop)
 {
 	*stop = 0;
 	pacman->score = 0;
+	pacman->eat = 0;
 	pacman->pacMove = (t_pos){0, 0};
 	pacman->ghostRedMove = (t_pos){0, 0};
 	pacman->ghostPinkMove = (t_pos){0, 0};
@@ -59,6 +60,9 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	
 	pacman->ghostPinkImage = IMG_Load("image/pink.png");
 	pacman->ghostPinkTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostPinkImage);
+	
+	pacman->ghostEatImage = IMG_Load("image/ghost.png");
+	pacman->ghostEatTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostEatImage);
 }
 
 int main(void)

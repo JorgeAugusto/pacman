@@ -68,6 +68,11 @@ typedef struct		s_pacman
 	SDL_Surface		*ghostPinkImage;
 	SDL_Texture		*ghostPinkTexture;
 	SDL_Rect			ghostPinkRect;
+
+	int				eat;
+	SDL_Surface		*ghostEatImage;
+	SDL_Texture		*ghostEatTexture;
+
 	
 	
 	int				stop;
