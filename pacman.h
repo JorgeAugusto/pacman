@@ -72,6 +72,12 @@ typedef struct		s_pacman
 	
 	int				stop;
 	int				score;
+	
+	
+	SDL_Surface		*messageSurface;
+	SDL_Rect			messageRect;
+	SDL_Texture		*mssageTexture;
+	
 
 	
 }					t_pacman;
@@ -88,6 +94,7 @@ void				putGhostRed(t_pacman *pacman);
 void				putGhostBlue(t_pacman *pacman);
 void				putGhostYellow(t_pacman *pacman);
 void				putGhostPink(t_pacman *pacman);
+void				putTextMessage(t_pacman *pacman, char *str);
 
 //int map[H][W];
 

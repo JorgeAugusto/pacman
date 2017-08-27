@@ -63,16 +63,16 @@
 		D260260D1F5160DF00D5000A = {
 			isa = PBXGroup;
 			children = (
-				8A5D12C41F52A5A2001CEFD3 /* putGhosts.c */,
-				8A5D12C21F51F2FA001CEFD3 /* putText.c */,
 				D260262C1F51BAF100D5000A /* drawCircle.c */,
-				D260262A1F51B0CB00D5000A /* putPacman.c */,
 				D26026281F51644E00D5000A /* drawMap.c */,
 				D26026251F51615D00D5000A /* initSdl.c */,
 				D26026201F51612C00D5000A /* main.c */,
+				8A5D12C41F52A5A2001CEFD3 /* putGhosts.c */,
+				D260262A1F51B0CB00D5000A /* putPacman.c */,
+				8A5D12C21F51F2FA001CEFD3 /* putText.c */,
 				D26026261F51615D00D5000A /* pacman.h */,
-				D26026171F5160DF00D5000A /* Products */,
 				D26026221F51614E00D5000A /* Frameworks */,
+				D26026171F5160DF00D5000A /* Products */,
 			);
 			sourceTree = "<group>";
 		};

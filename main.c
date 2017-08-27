@@ -29,9 +29,15 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	*stop = 0;
 	pacman->score = 0;
 	pacman->pacMove = (t_pos){0, 0};
+	pacman->ghostRedMove = (t_pos){0, 0};
+	pacman->ghostPinkMove = (t_pos){0, 0};
+	pacman->ghostBlueMove = (t_pos){0, 0};
+	pacman->ghostYellowMove = (t_pos){0, 0};
+	
 	pacman->pac = (t_pos){17, 20};
 	
-	pacman->ghostRed = (t_pos){10, 10};
+	pacman->ghostRed = (t_pos){9, 10};
+	pacman->ghostYellow = (t_pos){10, 10};
 	pacman->ghostBlue = (t_pos){1, 4};
 	pacman->ghostPink = (t_pos){16, 4};
 	
@@ -96,7 +102,10 @@ int main(void)
 		putPacman(pacman);
 		drawMap(pacman);
 		if (ghost++ % 2)
+		{
 			putGhostRed(pacman);
+			putGhostYellow(pacman);
+		}
 		else
 		{
 			putGhostBlue(pacman);
