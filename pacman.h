@@ -76,6 +76,7 @@ typedef struct		s_pacman
 	
 	
 	int				stop;
+	int				pause;
 	int				score;
 	
 	

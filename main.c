@@ -27,6 +27,7 @@ int map[22][19]={
 static void	initDefault(t_pacman *pacman, int *stop)
 {
 	*stop = 0;
+	pacman->pause = 0;
 	pacman->score = 0;
 	pacman->eat = 0;
 	pacman->pacMove = (t_pos){0, 0};
@@ -88,6 +89,8 @@ int main(void)
 			else if (pacman->sdl.e.type == SDL_KEYUP)
 			{
 				if (pacman->sdl.e.key.keysym.sym == SDLK_SPACE)
+					pacman->pause = (pacman->pause == 1) ? 0 : 1;
+				else  if (pacman->sdl.e.key.keysym.sym == SDLK_SPACE)
 				{
 					map[4][4] = 3;
 					drawMap(pacman);
@@ -102,38 +105,30 @@ int main(void)
 					pacman->pacMove = (t_pos){-1, 0};
 			}
 		}
-		sdlRenderClear(pacman);
-		putPacman(pacman);
-		drawMap(pacman);
-		if (ghost++ % 2)
+		if (pacman->pause == 0)
 		{
-			putGhostRed(pacman);
-			putGhostYellow(pacman);
+			sdlRenderClear(pacman);
+			putPacman(pacman);
+			drawMap(pacman);
+			if (ghost++ % 2)
+			{
+				putGhostRed(pacman);
+				putGhostYellow(pacman);
+			}
+			else
+			{
+				putGhostBlue(pacman);
+				putGhostPink(pacman);
+			}
+			if (pacman->eat != 0)
+				pacman->eat--;
+			
+			
+			SDL_RenderPresent(pacman->sdl.renderer);
+			SDL_Delay(250);
 		}
-		else
-		{
-			putGhostBlue(pacman);
-			putGhostPink(pacman);
-		}
+
 		
-		
-		if (pacman->eat != 0)
-			pacman->eat--;
-		
-		
-		SDL_RenderPresent(pacman->sdl.renderer);
-		SDL_Delay(250);
-		
-//		for(int i = 0; i < 22; i++)
-//		{
-//			for(int j = 0; j < 19; j++)
-//			{
-//				printf("%d, ", map[i][j]);
-//			}
-//			printf("\n");
-//			
-//		}
-//		printf("\n\n");
 	}
 	
 	
