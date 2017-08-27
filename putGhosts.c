@@ -70,6 +70,14 @@ void putGhostRed(t_pacman *pacman)
 	
 	map[pacman->ghostRed.y][pacman->ghostRed.x] = 5;
 	
+	pacman->ghostRedRect.x = pacman->ghostRed.x * 30;
+	pacman->ghostRedRect.y = pacman->ghostRed.y * 30;
+	pacman->ghostRedRect.w = 30;
+	pacman->ghostRedRect.h = 30;
+	
+
+	
+	
 }
 
 
@@ -78,7 +86,7 @@ void putGhostBlue(t_pacman *pacman)
 {
 
 	extern int	map[H][W];
-	static int	tmpPos = 0;
+	static int	tmpPos = 1;
 	int			tmp;
 	int			len = 5000;
 
@@ -138,6 +146,11 @@ void putGhostBlue(t_pacman *pacman)
 	pacman->ghostBlue.x += pacman->ghostBlueMove.x;
 	pacman->ghostBlue.y += pacman->ghostBlueMove.y;
 	
-	map[pacman->ghostBlue.y][pacman->ghostBlue.x] = 5;
+	map[pacman->ghostBlue.y][pacman->ghostBlue.x] = 6;
+	
+	pacman->ghostBlueRect.x = pacman->ghostBlue.x * 30;
+	pacman->ghostBlueRect.y = pacman->ghostBlue.y * 30;
+	pacman->ghostBlueRect.w = 30;
+	pacman->ghostBlueRect.h = 30;
 
 }

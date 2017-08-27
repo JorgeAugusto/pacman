@@ -45,16 +45,16 @@ void	drawMap(t_pacman *pacman)
 			{
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 0, 255);
 				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 15);
-				//				SDL_RenderFillRect(pacman->sdl.renderer, &rect);
-				//				SDL_RenderDrawRect(pacman->sdl.renderer, &rect);
 				
 			}
 			else if (map[y][x] == 5) //red ghost
-			{
-				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 0, 0, 255);
-				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 15);
-				
-			}
+				SDL_RenderCopy(pacman->sdl.renderer, pacman->ghostRedTexture, NULL, &(pacman->ghostRedRect));
+			else if (map[y][x] == 6) //blue ghost
+				SDL_RenderCopy(pacman->sdl.renderer, pacman->ghostBlueTexture, NULL, &(pacman->ghostBlueRect));
+			else if (map[y][x] == 7) //pink ghost
+				SDL_RenderCopy(pacman->sdl.renderer, pacman->ghostPinkTexture, NULL, &(pacman->ghostPinkRect));
+			else if (map[y][x] == 8) //yellow ghost
+				SDL_RenderCopy(pacman->sdl.renderer, pacman->ghostYellowTexture, NULL, &(pacman->ghostYellowRect));
 			
 
 			rect.x += 30;

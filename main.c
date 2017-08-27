@@ -32,7 +32,20 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->pac = (t_pos){17, 20};
 	
 	pacman->ghostRed = (t_pos){10, 10};
-	pacman->ghostBlue = (t_pos){1, 1};
+	pacman->ghostBlue = (t_pos){1, 4};
+	pacman->ghostPink = (t_pos){16, 4};
+	
+	pacman->ghostRedImage = IMG_Load("image/red.png");
+	pacman->ghostRedTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostRedImage);
+	
+	pacman->ghostBlueImage = IMG_Load("image/Blue.png");
+	pacman->ghostBlueTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostBlueImage);
+	
+//	pacman->ghostYellowImage = IMG_Load("image/yellow.png");
+//	pacman->ghostYellowTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostYellowImage);
+//	
+//	pacman->ghostPinkImage = IMG_Load("image/pink.png");
+//	pacman->ghostPinkTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostPinkImage);
 }
 
 int main(void)
@@ -77,8 +90,8 @@ int main(void)
 		drawMap(pacman);
 		if (ghost++ % 2)
 			putGhostRed(pacman);
-//		else
-//			putGhostBlue(pacman);
+		else
+			putGhostBlue(pacman);
 		
 		
 		SDL_RenderPresent(pacman->sdl.renderer);
