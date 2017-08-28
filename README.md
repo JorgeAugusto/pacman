@@ -24,11 +24,12 @@ $> make sdl2
 $> make
 $> ./pacman
 ```
-# snakeGame with SDL2 graphic:
-![pacman](/pacman000.png?raw=true "pacman")
+# Pacman with SDL2 graphic:
+
 ![pacman](/pacman001.png?raw=true "pacman")
 ![pacman](/pacman002.png?raw=true "pacman")
 ![pacman](/pacman003.png?raw=true "pacman")
+![pacman](/pacman004.png?raw=true "pacman")
 
 # Hot Keys:
   * `UP`, `DOWN` : move along the Y-axis
