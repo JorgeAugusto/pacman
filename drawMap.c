@@ -73,5 +73,10 @@ void	drawMap(t_pacman *pacman)
 	putScore(pacman);
 	setLivesLevel(pacman);
 	if (winFlag == 0)
+	{
 		putTextMessage(pacman, "YOU WIN!");
+		SDL_RenderPresent(pacman->sdl.renderer);
+		SDL_Delay(2000);
+		exit(0);
+	}
 }
