@@ -3,7 +3,8 @@
 
 void	drawMap(t_pacman *pacman)
 {
-	extern int map[H][W];
+	extern int	map[H][W];
+	int			winFlag = 0;
 
 	
 	SDL_Rect  rect;
@@ -26,13 +27,13 @@ void	drawMap(t_pacman *pacman)
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 30/2, rect.y + 30/2);
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 30/2, rect.y + 32/2);
 				SDL_RenderDrawPoint(pacman->sdl.renderer, rect.x + 32/2, rect.y + 32/2);
-				
+				winFlag = 1;
 			}
 			else if (map[y][x] == 4) // big coin
 			{
 				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 255, 255);
 				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 7);
-				
+				winFlag = 1;
 			}
 			else if (map[y][x] == 2) // wall
 			{
@@ -46,16 +47,12 @@ void	drawMap(t_pacman *pacman)
 				pacman->pacRect = (SDL_Rect){rect.x, rect.y, 30, 30};
 				if (pacman->pacMove.x == 0 && pacman->pacMove.y == 1)
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageDown);
-				
 				else if (pacman->pacMove.x == 0 && pacman->pacMove.y == -1)
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageUp);
-				
 				else if (pacman->pacMove.x == 1 && pacman->pacMove.y == 0)
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageRight);
-				
 				else if (pacman->pacMove.x == -1 && pacman->pacMove.y == 0)
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageLeft);
-
 				if ((x % 2 && y % 2) || (x % 2 == 0 && y % 2 == 0))
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImage);
 				
@@ -77,7 +74,8 @@ void	drawMap(t_pacman *pacman)
 		rect.y += 30;
 	}
 	putText(pacman);
-
+	if (winFlag == 0)
+		putTextMessage(pacman, "YOU WIN!");
 }
 
 

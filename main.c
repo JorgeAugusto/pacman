@@ -88,7 +88,11 @@ int main(void)
 			else if (pacman->sdl.e.type == SDL_KEYUP)
 			{
 				if (pacman->sdl.e.key.keysym.sym == SDLK_SPACE)
+				{
+					putTextMessage(pacman, "Pause");
+					SDL_RenderPresent(pacman->sdl.renderer);
 					pacman->pause = (pacman->pause == 1) ? 0 : 1;
+				}
 				else  if (pacman->sdl.e.key.keysym.sym == SDLK_SPACE)
 				{
 					map[4][4] = 3;
@@ -126,6 +130,7 @@ int main(void)
 			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(250);
 		}
+		
 
 		
 	}
