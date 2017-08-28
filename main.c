@@ -105,6 +105,7 @@ int main(void)
 			sdlRenderClear(pacman);
 			putPacman(pacman);
 			drawMap(pacman);
+			
 			if (ghost++ % 2)
 			{
 				putGhostRed(pacman);
@@ -115,6 +116,7 @@ int main(void)
 				putGhostBlue(pacman);
 				putGhostPink(pacman);
 			}
+			
 			if (pacman->eat != 0)
 				pacman->eat--;
 			if (pacman->pacmanLives == 0)

@@ -10,22 +10,17 @@ void putPacman(t_pacman *pacman)
 		map[pacman->pac.y][pacman->pac.x] = 0;
 		pacman->pac.x += pacman->pacMove.x;
 		pacman->pac.y += pacman->pacMove.y;
-		
 		if(pacman->pac.x == 0 && pacman->pac.y == 10)
 			pacman->pac = (t_pos){18, 10};
 		else if(pacman->pac.x == 18 && pacman->pac.y == 10)
 			pacman->pac = (t_pos){0, 10};
 			
 		if (map[pacman->pac.y][pacman->pac.x] == 1)
-		{
 			pacman->score += 10;
-//			printf("score %d\n\n", pacman->score);
-		}
 		else if (map[pacman->pac.y][pacman->pac.x] == 4)
 		{
 			pacman->score += 50;
 			pacman->eat = 28;
-//			printf("score %d\n\n", pacman->score);
 		}
 		else if (map[pacman->pac.y][pacman->pac.x] == 5 && pacman->eat != 0)
 		{
@@ -51,7 +46,6 @@ void putPacman(t_pacman *pacman)
 			pacman->ghostYellowMove = (t_pos){0, 0};
 			pacman->score += 200;
 		}
-
 		map[pacman->pac.y][pacman->pac.x] = 3;
 	}
 }

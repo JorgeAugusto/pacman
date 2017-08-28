@@ -6,7 +6,6 @@ void	drawMap(t_pacman *pacman)
 	extern int	map[H][W];
 	int			winFlag = 0;
 
-	
 	SDL_Rect  rect;
 	rect = (SDL_Rect) {0, 0, 30, 30};
 	for (int y = 0; y < 22; y++)
@@ -66,8 +65,6 @@ void	drawMap(t_pacman *pacman)
 				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->ghostPinkTexture : pacman->ghostEatTexture, NULL, &(pacman->ghostPinkRect));
 			else if (map[y][x] == 8) //yellow ghost
 				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->ghostYellowTexture : pacman->ghostEatTexture, NULL, &(pacman->ghostYellowRect));
-			
-
 			rect.x += 30;
 			rect = (SDL_Rect) {rect.x, rect.y, rect.h, rect.w};
 		}
@@ -78,6 +75,3 @@ void	drawMap(t_pacman *pacman)
 	if (winFlag == 0)
 		putTextMessage(pacman, "YOU WIN!");
 }
-
-
-

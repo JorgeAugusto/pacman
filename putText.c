@@ -14,7 +14,7 @@ void	putScore(t_pacman *pacman)
 	pacman->sdl.textureScore = SDL_CreateTextureFromSurface(pacman->sdl.renderer,
 															pacman->sdl.surfaceScore);
 	pacman->sdl.rectScore.x = 5;
-	pacman->sdl.rectScore.y = 22*30;
+	pacman->sdl.rectScore.y = HEIG - 30;
 	pacman->sdl.rectScore.w = 200;
 	pacman->sdl.rectScore.h = 30;
 	
@@ -30,7 +30,7 @@ void	putTextMessage(t_pacman *pacman, char *str)
 	pacman->mssageTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer,
 															pacman->messageSurface);
 	pacman->messageRect.x = 185;
-	pacman->messageRect.y = 22*30/2;
+	pacman->messageRect.y = (HEIG - 30)/2;
 	pacman->messageRect.w = 200;
 	pacman->messageRect.h = 30;
 	
@@ -41,7 +41,7 @@ void	setLivesLevel(t_pacman *pacman)
 {
 	SDL_Rect	rect;
 	int			i;
-	
+
 	i = 0;
 	rect = (SDL_Rect) {WID - 90, HEIG - 30, 30, 30};
 	while(i < pacman->pacmanLives)
