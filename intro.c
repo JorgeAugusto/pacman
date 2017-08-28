@@ -29,5 +29,6 @@ void intro(t_pacman *pacman, int *introOff)
 		SDL_Delay(250);
 		i++;
 	}
+	SDL_RenderPresent(pacman->sdl.renderer);
 	*introOff = 1;
 }

@@ -10,7 +10,7 @@ void	putScore(t_pacman *pacman)
 	
 	pacman->sdl.font = TTF_OpenFont("arcadeclassic/ARCADECLASSIC.TTF", 22);
 	pacman->sdl.surfaceScore = TTF_RenderText_Solid(pacman->sdl.font, buf,
-													(SDL_Color){255, 255, 255});
+													(SDL_Color){255, 255, 255, 255});
 	pacman->sdl.textureScore = SDL_CreateTextureFromSurface(pacman->sdl.renderer,
 															pacman->sdl.surfaceScore);
 	pacman->sdl.rectScore.x = 5;
@@ -26,7 +26,7 @@ void	putTextMessage(t_pacman *pacman, char *str)
 	
 	pacman->sdl.font = TTF_OpenFont("arcadeclassic/ARCADECLASSIC.TTF", 22);
 	pacman->messageSurface = TTF_RenderText_Solid(pacman->sdl.font, str,
-													(SDL_Color){255, 255, 255});
+													(SDL_Color){255, 255, 255, 255});
 	pacman->mssageTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer,
 															pacman->messageSurface);
 	pacman->messageRect.x = 185;
