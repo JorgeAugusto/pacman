@@ -119,13 +119,7 @@ int main(void)
 			
 			if (pacman->eat != 0)
 				pacman->eat--;
-			if (pacman->pacmanLives == 0)
-			{
-				putTextMessage(pacman, "You lose");
-				SDL_RenderPresent(pacman->sdl.renderer);
-				SDL_Delay(1500);
-				exit(0);
-			}
+
 			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(250);
 		}

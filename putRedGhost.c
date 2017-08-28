@@ -90,6 +90,13 @@ void putGhostRed(t_pacman *pacman)
 	if (tmpPos == 3)
 	{
 		pacman->pacmanLives--;
+		if (pacman->pacmanLives == 0)
+		{
+			putTextMessage(pacman, "You lose");
+			SDL_RenderPresent(pacman->sdl.renderer);
+			SDL_Delay(1500);
+			exit(0);
+		}
 		map[pacman->pac.y][pacman->pac.x] = 0;
 		pacman->pac = (t_pos){17, 20};
 		pacman->pacMove = (t_pos){-1, 0};
