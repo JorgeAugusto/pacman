@@ -25,7 +25,7 @@ fclean: clean
 re: fclean all
 
 sdl2:
-	@cp -r SDL2_ttf.framework ~/Library/Frameworks/
-	@cp -r SDL2_image.framework ~/Library/Frameworks/
-	@cp -r SDL2.framework ~/Library/Frameworks/
+	cp -r SDL2_ttf.framework ~/Library/Frameworks/
+	cp -r SDL2_image.framework ~/Library/Frameworks/
+	cp -r SDL2.framework ~/Library/Frameworks/
 

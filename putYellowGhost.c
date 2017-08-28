@@ -109,6 +109,7 @@ void putGhostYellow(t_pacman *pacman)
 		sdlRenderClear(pacman);
 		SDL_Delay(1500);
 		tmpPos = 0;
+		return ;
 	}
 	pacman->ghostYellow.x += pacman->ghostYellowMove.x;
 	pacman->ghostYellow.y += pacman->ghostYellowMove.y;
