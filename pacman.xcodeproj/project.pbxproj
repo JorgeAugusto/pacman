@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A5D12C11F51F0DC001CEFD3 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D12C01F51F0DC001CEFD3 /* SDL2_ttf.framework */; };
 		8A5D12C31F51F2FA001CEFD3 /* putText.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D12C21F51F2FA001CEFD3 /* putText.c */; };
 		8A5D12C51F52A5A2001CEFD3 /* putGhosts.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D12C41F52A5A2001CEFD3 /* putGhosts.c */; };
-		8A5D12C71F52BE17001CEFD3 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D12C61F52BE17001CEFD3 /* SDL2_image.framework */; };
 		D26026211F51612C00D5000A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026201F51612C00D5000A /* main.c */; };
-		D26026241F51614E00D5000A /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26026231F51614E00D5000A /* SDL2.framework */; };
 		D26026271F51615D00D5000A /* initSdl.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026251F51615D00D5000A /* initSdl.c */; };
 		D26026291F51644E00D5000A /* drawMap.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026281F51644E00D5000A /* drawMap.c */; };
 		D260262B1F51B0CB00D5000A /* putPacman.c in Sources */ = {isa = PBXBuildFile; fileRef = D260262A1F51B0CB00D5000A /* putPacman.c */; };
 		D260262D1F51BAF100D5000A /* drawCircle.c in Sources */ = {isa = PBXBuildFile; fileRef = D260262C1F51BAF100D5000A /* drawCircle.c */; };
+		D26517E41F5404CB00F302C2 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D12C61F52BE17001CEFD3 /* SDL2_image.framework */; };
+		D26517E51F5404CB00F302C2 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D12C01F51F0DC001CEFD3 /* SDL2_ttf.framework */; };
+		D26517E61F5404CB00F302C2 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26026231F51614E00D5000A /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,9 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A5D12C71F52BE17001CEFD3 /* SDL2_image.framework in Frameworks */,
-				8A5D12C11F51F0DC001CEFD3 /* SDL2_ttf.framework in Frameworks */,
-				D26026241F51614E00D5000A /* SDL2.framework in Frameworks */,
+				D26517E41F5404CB00F302C2 /* SDL2_image.framework in Frameworks */,
+				D26517E51F5404CB00F302C2 /* SDL2_ttf.framework in Frameworks */,
+				D26517E61F5404CB00F302C2 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

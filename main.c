@@ -52,7 +52,7 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->ghostRedImage = IMG_Load("image/red.png");
 	pacman->ghostRedTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostRedImage);
 	
-	pacman->ghostBlueImage = IMG_Load("image/Blue.png");
+	pacman->ghostBlueImage = IMG_Load("image/blue.png");
 	pacman->ghostBlueTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostBlueImage);
 	
 	pacman->ghostYellowImage = IMG_Load("image/yellow.png");
