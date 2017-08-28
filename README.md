@@ -2,11 +2,11 @@
 
 # Info:
 Pacman is written in C classic Pacman game!
-![pacman](/image/red.png?raw=16x16 "pacman")
-![pacman](/image/blue.png?raw=16x16 "pacman")
-![pacman](/image/pink.png?raw=16x16 "pacman")
-![pacman](/image/yellow.png?raw=16x16 "pacman")
-![pacman](/image/pacmanRight.png?raw=16x16 "pacman")
+![pacman](/image/red.png?raw =16x16 "pacman")
+![pacman](/image/blue.png?raw =16x16 "pacman")
+![pacman](/image/pink.png?raw =16x16 "pacman")
+![pacman](/image/yellow.png?raw =16x16 "pacman")
+![pacman](/image/pacmanRight.png?raw =16x16 "pacman")
 PAcman is an arcade game developed by Namco and first released in Japan in May 1980
 
 # Gif:
