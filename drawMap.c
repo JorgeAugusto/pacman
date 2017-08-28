@@ -73,7 +73,8 @@ void	drawMap(t_pacman *pacman)
 		}
 		rect.y += 30;
 	}
-	putText(pacman);
+	putScore(pacman);
+	setLivesLevel(pacman);
 	if (winFlag == 0)
 		putTextMessage(pacman, "YOU WIN!");
 }

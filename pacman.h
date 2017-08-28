@@ -3,6 +3,7 @@
 #define snake_h
 
 # include <stdlib.h>
+# include <limits.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <SDL2/SDL.h>
@@ -42,8 +43,9 @@ typedef struct		s_pacman
 	SDL_Surface		*pacImageLeft;
 	SDL_Surface		*pacImageRight;
 	SDL_Texture		*pacTexture;
-	SDL_Rect			pacRect;
+	SDL_Rect		pacRect;
 	
+	int				pacmanLives;
 	
 	
 	t_pos			ghostRed;
@@ -96,12 +98,14 @@ void				drawMap(t_pacman *pacman);
 void				putPacman(t_pacman *pacman);
 void				drawCircle(t_pacman *pacman, t_pos center, int radius);
 
-void				putText(t_pacman *pacman);
+void				putScore(t_pacman *pacman);
+void				setLivesLevel(t_pacman *pacman);
 void				putGhostRed(t_pacman *pacman);
 void				putGhostBlue(t_pacman *pacman);
 void				putGhostYellow(t_pacman *pacman);
 void				putGhostPink(t_pacman *pacman);
 void				putTextMessage(t_pacman *pacman, char *str);
+void				intro(t_pacman *pacman);
 
 //int map[H][W];
 

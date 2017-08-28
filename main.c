@@ -1,4 +1,4 @@
-int map[22][19]={
+int map[22][19] = {
 	{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
 	{2,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,2},
 	{2,4,2,2,1,2,2,2,1,2,1,2,2,2,1,2,2,4,2},
@@ -37,6 +37,7 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->ghostYellow = (t_pos){10, 10};
 	pacman->ghostBlue = (t_pos){1, 4};
 	pacman->ghostPink = (t_pos){16, 4};
+	pacman->pacmanLives = 3;
 	
 	pacman->pacImage = IMG_Load("image/pacman.png");
 	pacman->pacImageUp = IMG_Load("image/pacmanUp.png");
@@ -70,12 +71,14 @@ int main(void)
 	pacman = (t_pacman *)malloc(sizeof(t_pacman));
 	
 	sdlInit(pacman);
+	
 	initDefault(pacman, &stop);
+
 	putPacman(pacman);
 	drawMap(pacman);
-	
 	while (!stop)
 	{
+
 		while (SDL_PollEvent(&(pacman->sdl.e)))
 		{
 			if (pacman->sdl.e.type == SDL_QUIT ||
@@ -104,6 +107,7 @@ int main(void)
 					pacman->pacMove = (t_pos){-1, 0};
 			}
 		}
+
 		if (pacman->pause == 0)
 		{
 			sdlRenderClear(pacman);
@@ -121,7 +125,13 @@ int main(void)
 			}
 			if (pacman->eat != 0)
 				pacman->eat--;
-			
+			if (pacman->pacmanLives == 0)
+			{
+				putTextMessage(pacman, "You lose");
+				SDL_RenderPresent(pacman->sdl.renderer);
+				SDL_Delay(1500);
+				exit(0);
+			}
 			
 			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(250);

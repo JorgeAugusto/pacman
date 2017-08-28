@@ -1,8 +1,7 @@
 
-
 #include "pacman.h"
 
-void	putText(t_pacman *pacman)
+void	putScore(t_pacman *pacman)
 {
 	char buf[50] = {0};
 	
@@ -38,5 +37,18 @@ void	putTextMessage(t_pacman *pacman, char *str)
 	SDL_RenderCopy(pacman->sdl.renderer, pacman->mssageTexture, NULL, &(pacman->messageRect));
 }
 
-
+void	setLivesLevel(t_pacman *pacman)
+{
+	SDL_Rect	rect;
+	int			i;
 	
+	i = 0;
+	rect = (SDL_Rect) {WID - 90, HEIG - 30, 30, 30};
+	while(i < pacman->pacmanLives)
+	{
+		pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageRight);
+		SDL_RenderCopy(pacman->sdl.renderer, pacman->pacTexture, NULL, &(rect));
+		rect.x +=30;
+		i++;
+	}
+}
