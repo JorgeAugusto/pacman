@@ -49,25 +49,29 @@ typedef struct		s_pacman
 	t_pos			ghostRedMove;
 	SDL_Surface		*ghostRedImage;
 	SDL_Texture		*ghostRedTexture;
-	SDL_Rect			ghostRedRect;
+	SDL_Rect		ghostRedRect;
+	int				ghostRedMapPreviousValue;
 	
 	t_pos			ghostBlue;
 	t_pos			ghostBlueMove;
 	SDL_Surface		*ghostBlueImage;
 	SDL_Texture		*ghostBlueTexture;
-	SDL_Rect			ghostBlueRect;
+	SDL_Rect		ghostBlueRect;
+	int				ghostBlueMapPreviousValue;
 	
 	t_pos			ghostYellow;
 	t_pos			ghostYellowMove;
 	SDL_Surface		*ghostYellowImage;
 	SDL_Texture		*ghostYellowTexture;
-	SDL_Rect			ghostYellowRect;
+	SDL_Rect		ghostYellowRect;
+	int				ghostYellowMapPreviousValue;
 	
 	t_pos			ghostPink;
 	t_pos			ghostPinkMove;
 	SDL_Surface		*ghostPinkImage;
 	SDL_Texture		*ghostPinkTexture;
-	SDL_Rect			ghostPinkRect;
+	SDL_Rect		ghostPinkRect;
+	int				ghostPinkMapPreviousValue;
 	
 
 	SDL_Surface		*buttonImage;

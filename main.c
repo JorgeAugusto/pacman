@@ -42,6 +42,11 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->ghostPink = (t_pos){16, 4};
 	pacman->pacmanLives = 3;
 	
+	pacman->ghostRedMapPreviousValue = 0;
+	pacman->ghostBlueMapPreviousValue = 1;
+	pacman->ghostPinkMapPreviousValue = 1;
+	pacman->ghostYellowMapPreviousValue = 0;
+	
 	pacman->pacImage = IMG_Load("image/pacman.png");
 	pacman->pacImageUp = IMG_Load("image/pacmanUp.png");
 	pacman->pacImageDown = IMG_Load("image/pacmanDown.png");
@@ -121,8 +126,6 @@ int main(void)
 				putGhostPink(pacman);
 				ghostOffset = 1;
 			}
-			if (pacman->eat != 0)
-				pacman->eat--;
 			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(250);
 		}
