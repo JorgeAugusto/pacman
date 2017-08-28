@@ -65,24 +65,20 @@ static void	initDefault(t_pacman *pacman, int *stop)
 int main(void)
 {
 	int			stop;
-	t_pacman		*pacman;
+	t_pacman	*pacman;
 	static int	ghost = 0;
-	
-	pacman = (t_pacman *)malloc(sizeof(t_pacman));
-	
-	sdlInit(pacman);
-	
-	initDefault(pacman, &stop);
+	int			introOff = 0;
 
+	pacman = (t_pacman *)malloc(sizeof(t_pacman));
+	sdlInit(pacman);
+	initDefault(pacman, &stop);
 	putPacman(pacman);
-	drawMap(pacman);
+	
 	while (!stop)
 	{
-
 		while (SDL_PollEvent(&(pacman->sdl.e)))
 		{
-			if (pacman->sdl.e.type == SDL_QUIT ||
-				pacman->sdl.e.key.keysym.sym == SDLK_ESCAPE)
+			if (pacman->sdl.e.type == SDL_QUIT || pacman->sdl.e.key.keysym.sym == SDLK_ESCAPE)
 				stop = 1;
 			else if (pacman->sdl.e.type == SDL_KEYUP)
 			{
@@ -91,11 +87,6 @@ int main(void)
 					putTextMessage(pacman, "Pause");
 					SDL_RenderPresent(pacman->sdl.renderer);
 					pacman->pause = (pacman->pause == 1) ? 0 : 1;
-				}
-				else  if (pacman->sdl.e.key.keysym.sym == SDLK_SPACE)
-				{
-					map[4][4] = 3;
-					drawMap(pacman);
 				}
 				else if (pacman->sdl.e.key.keysym.sym == SDLK_UP)
 					pacman->pacMove = (t_pos){0, -1};
@@ -107,7 +98,8 @@ int main(void)
 					pacman->pacMove = (t_pos){-1, 0};
 			}
 		}
-
+		if (introOff == 0)
+			intro(pacman, &introOff);
 		if (pacman->pause == 0)
 		{
 			sdlRenderClear(pacman);
@@ -132,19 +124,11 @@ int main(void)
 				SDL_Delay(1500);
 				exit(0);
 			}
-			
 			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(250);
 		}
 		
-
-		
 	}
-	
-	
-
-	
-
-//	sdlDestroy(pacman);
+	sdlDestroy(pacman);
 	return 0;
 }

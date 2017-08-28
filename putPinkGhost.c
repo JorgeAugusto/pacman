@@ -92,7 +92,7 @@ void putGhostPink(t_pacman *pacman)
 		pacman->pacmanLives--;
 		map[pacman->pac.y][pacman->pac.x] = 0;
 		pacman->pac = (t_pos){17, 20};
-		pacman->pacMove = (t_pos){0, 0};
+		pacman->pacMove = (t_pos){-1, 0};
 		tmpPos = 0;
 	}
 	pacman->ghostPink.x += pacman->ghostPinkMove.x;
@@ -100,4 +100,3 @@ void putGhostPink(t_pacman *pacman)
 	map[pacman->ghostPink.y][pacman->ghostPink.x] = 7;
 	pacman->ghostPinkRect = (SDL_Rect){pacman->ghostPink.x * 30, pacman->ghostPink.y * 30, 30, 30};
 }
-

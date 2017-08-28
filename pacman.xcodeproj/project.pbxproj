@@ -20,6 +20,7 @@
 		D26517EA1F540F3900F302C2 /* putRedGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517E91F540F3900F302C2 /* putRedGhost.c */; };
 		D26517EC1F540F6100F302C2 /* putYellowGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517EB1F540F6100F302C2 /* putYellowGhost.c */; };
 		D26517EE1F54109900F302C2 /* putBlueGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517ED1F54109900F302C2 /* putBlueGhost.c */; };
+		D26517F21F542A1000F302C2 /* intro.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517F11F542A0F00F302C2 /* intro.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,7 @@
 		D26517E91F540F3900F302C2 /* putRedGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putRedGhost.c; sourceTree = "<group>"; };
 		D26517EB1F540F6100F302C2 /* putYellowGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putYellowGhost.c; sourceTree = "<group>"; };
 		D26517ED1F54109900F302C2 /* putBlueGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putBlueGhost.c; sourceTree = "<group>"; };
+		D26517F11F542A0F00F302C2 /* intro.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = intro.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		D260260D1F5160DF00D5000A = {
 			isa = PBXGroup;
 			children = (
+				D26517F11F542A0F00F302C2 /* intro.c */,
 				D26517ED1F54109900F302C2 /* putBlueGhost.c */,
 				D26517E91F540F3900F302C2 /* putRedGhost.c */,
 				D26517EB1F540F6100F302C2 /* putYellowGhost.c */,
@@ -163,6 +166,7 @@
 				8A5D12C51F52A5A2001CEFD3 /* putPinkGhost.c in Sources */,
 				D260262B1F51B0CB00D5000A /* putPacman.c in Sources */,
 				D26517EE1F54109900F302C2 /* putBlueGhost.c in Sources */,
+				D26517F21F542A1000F302C2 /* intro.c in Sources */,
 				D26026271F51615D00D5000A /* initSdl.c in Sources */,
 				D260262D1F51BAF100D5000A /* drawCircle.c in Sources */,
 				8A5D12C31F51F2FA001CEFD3 /* putText.c in Sources */,

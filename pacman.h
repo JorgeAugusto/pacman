@@ -105,7 +105,7 @@ void				putGhostBlue(t_pacman *pacman);
 void				putGhostYellow(t_pacman *pacman);
 void				putGhostPink(t_pacman *pacman);
 void				putTextMessage(t_pacman *pacman, char *str);
-void				intro(t_pacman *pacman);
+void				intro(t_pacman *pacman, int *introOff);
 
 //int map[H][W];
 

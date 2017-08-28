@@ -92,7 +92,7 @@ void putGhostBlue(t_pacman *pacman)
 		pacman->pacmanLives--;
 		map[pacman->pac.y][pacman->pac.x] = 0;
 		pacman->pac = (t_pos){17, 20};
-		pacman->pacMove = (t_pos){0, 0};
+		pacman->pacMove = (t_pos){-1, 0};
 		tmpPos = 0;
 	}
 	pacman->ghostBlue.x += pacman->ghostBlueMove.x;
