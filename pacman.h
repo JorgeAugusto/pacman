@@ -68,6 +68,11 @@ typedef struct		s_pacman
 	SDL_Surface		*ghostPinkImage;
 	SDL_Texture		*ghostPinkTexture;
 	SDL_Rect			ghostPinkRect;
+	
+
+	SDL_Surface		*buttonImage;
+	SDL_Texture		*buttonTexture;
+	SDL_Rect		buttonRect;
 
 	int				eat;
 	SDL_Surface		*ghostEatImage;
@@ -87,7 +92,6 @@ void				sdlDestroy(t_pacman *pacman);
 void				sdlRenderClear(t_pacman *pacman);
 void				drawMap(t_pacman *pacman);
 void				putPacman(t_pacman *pacman);
-void				drawCircle(t_pacman *pacman, t_pos center, int radius);
 void				putScore(t_pacman *pacman);
 void				setLivesLevel(t_pacman *pacman);
 void				putGhostRed(t_pacman *pacman);

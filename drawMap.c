@@ -30,8 +30,8 @@ void	drawMap(t_pacman *pacman)
 			}
 			else if (map[y][x] == 4) // big coin
 			{
-				SDL_SetRenderDrawColor(pacman->sdl.renderer, 255, 255, 255, 255);
-				drawCircle(pacman, (t_pos){rect.x + 30/2, rect.y + 30/2}, 7);
+				pacman->buttonRect = (SDL_Rect){rect.x + 5, rect.y + 5, 20, 20};
+				SDL_RenderCopy(pacman->sdl.renderer, pacman->buttonTexture, NULL, &(pacman->buttonRect));
 				winFlag = 1;
 			}
 			else if (map[y][x] == 2) // wall
@@ -54,7 +54,6 @@ void	drawMap(t_pacman *pacman)
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageLeft);
 				if ((x % 2 && y % 2) || (x % 2 == 0 && y % 2 == 0))
 					pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImage);
-				
 				SDL_RenderCopy(pacman->sdl.renderer, pacman->pacTexture, NULL, &(pacman->pacRect));
 			}
 			else if (map[y][x] == 5) //red ghost
@@ -75,8 +74,7 @@ void	drawMap(t_pacman *pacman)
 	if (winFlag == 0)
 	{
 		putTextMessage(pacman, "YOU WIN!");
-		SDL_RenderPresent(pacman->sdl.renderer);
-		SDL_Delay(2000);
+		SDL_Delay(2500);
 		exit(0);
 	}
 }

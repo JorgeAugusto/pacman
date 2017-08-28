@@ -93,7 +93,6 @@ void putGhostBlue(t_pacman *pacman)
 		if (pacman->pacmanLives == 0)
 		{
 			putTextMessage(pacman, "You lose");
-			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(1500);
 			exit(0);
 		}
@@ -105,7 +104,6 @@ void putGhostBlue(t_pacman *pacman)
 		pacman->ghostBlue = (t_pos){1, 4};
 		pacman->ghostPink = (t_pos){16, 4};
 		putTextMessage(pacman, "GET READY");
-		SDL_RenderPresent(pacman->sdl.renderer);
 		sdlRenderClear(pacman);
 		SDL_Delay(1500);
 		tmpPos = 0;

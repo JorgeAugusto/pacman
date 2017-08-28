@@ -2,14 +2,14 @@
 
 void intro(t_pacman *pacman, int *introOff)
 {
-	int i;
+	int			i;
+	SDL_Rect	rect;
 	i = 0;
 
-	SDL_Rect  rect;
 	rect = (SDL_Rect) {0, 300, 30, 30};
+	sdlRenderClear(pacman);
 	while(i < 7)
 	{
-		putTextMessage(pacman, "PACMAN");
 		rect.x += 30;
 		SDL_RenderCopy(pacman->sdl.renderer, pacman->ghostYellowTexture, NULL, &(rect));
 		rect.x += 30;
@@ -22,9 +22,10 @@ void intro(t_pacman *pacman, int *introOff)
 		pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImageRight);
 		if (i % 2)
 			pacman->pacTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->pacImage);
+		
 		SDL_RenderCopy(pacman->sdl.renderer, pacman->pacTexture, NULL, &(rect));
-		SDL_RenderPresent(pacman->sdl.renderer);
 		rect.x -= 120;
+		putTextMessage(pacman, "PACMAN");
 		sdlRenderClear(pacman);
 		SDL_Delay(250);
 		i++;

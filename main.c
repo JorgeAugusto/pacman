@@ -1,3 +1,7 @@
+
+#include "pacman.h"
+
+	// set game map
 int map[22][19] = {
 	{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
 	{2,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,2},
@@ -22,10 +26,9 @@ int map[22][19] = {
 	{2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2},
 	{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}};
 
-#include "pacman.h"
-
 static void	initDefault(t_pacman *pacman, int *stop)
 {
+	// read textures and set beginning positions of ghosts/pacman
 	*stop = 0;
 	pacman->pause = 0;
 	pacman->score = 0;
@@ -60,19 +63,21 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	
 	pacman->ghostEatImage = IMG_Load("image/ghost.png");
 	pacman->ghostEatTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->ghostEatImage);
+	
+	pacman->buttonImage = IMG_Load("image/button.png");
+	pacman->buttonTexture = SDL_CreateTextureFromSurface(pacman->sdl.renderer, pacman->buttonImage);
 }
 
 int main(void)
 {
 	int			stop;
 	t_pacman	*pacman;
-	static int	ghost = 0;
+	static int	ghostOffset = 0;
 	int			introOff = 0;
 
 	pacman = (t_pacman *)malloc(sizeof(t_pacman));
 	sdlInit(pacman);
 	initDefault(pacman, &stop);
-	putPacman(pacman);
 	
 	while (!stop)
 	{
@@ -85,7 +90,6 @@ int main(void)
 				if (pacman->sdl.e.key.keysym.sym == SDLK_SPACE)
 				{
 					putTextMessage(pacman, "Pause");
-					SDL_RenderPresent(pacman->sdl.renderer);
 					pacman->pause = (pacman->pause == 1) ? 0 : 1;
 				}
 				else if (pacman->sdl.e.key.keysym.sym == SDLK_UP)
@@ -105,15 +109,17 @@ int main(void)
 			sdlRenderClear(pacman);
 			putPacman(pacman);
 			drawMap(pacman);
-			if (ghost++ % 2)
+			if (ghostOffset % 2)
 			{
 				putGhostRed(pacman);
 				putGhostYellow(pacman);
+				ghostOffset = 0;
 			}
 			else
 			{
 				putGhostBlue(pacman);
 				putGhostPink(pacman);
+				ghostOffset = 1;
 			}
 			if (pacman->eat != 0)
 				pacman->eat--;

@@ -7,7 +7,7 @@ CFLAGS =  -F. -Wall -Werror -Wextra
 
 SDL_FLAGS = -framework SDL2 -framework SDL2_ttf -framework SDL2_image
 
-OBJ = drawCircle.o main.o putRedGhost.o drawMap.o putBlueGhost.o putText.o initSdl.o putPacman.o putYellowGhost.o intro.o putPinkGhost.o
+OBJ = main.o putRedGhost.o drawMap.o putBlueGhost.o putText.o initSdl.o putPacman.o putYellowGhost.o intro.o putPinkGhost.o
 
 HEADER = pacman.h
 
