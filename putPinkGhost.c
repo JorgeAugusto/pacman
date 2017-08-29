@@ -88,7 +88,7 @@ void putGhostPink(t_pacman *pacman)
 		}
 	}
 	
-	if (pacman->ghostPinkMapPreviousValue == 3)
+	if (pacman->ghostBlueMapPreviousValue == 3)
 	{
 		//if U eated by ghost
 		pacman->pacmanLives--;
@@ -99,16 +99,12 @@ void putGhostPink(t_pacman *pacman)
 			exit(0);
 		}
 		map[pacman->pac.y][pacman->pac.x] = 0;
-		pacman->pac = (t_pos){17, 20};
+		setDefaultPosition(pacman);
 		pacman->pacMove = (t_pos){-1, 0};
-		pacman->ghostRed = (t_pos){6, 8};
-		pacman->ghostYellow = (t_pos){10, 10};
-		pacman->ghostBlue = (t_pos){1, 4};
-		pacman->ghostPink = (t_pos){16, 4};
 		putTextMessage(pacman, "GET READY");
 		sdlRenderClear(pacman);
 		SDL_Delay(1500);
-		pacman->ghostPinkMapPreviousValue = 0;
+		pacman->ghostBlueMapPreviousValue = 0;
 		return ;
 	}
 	pacman->ghostPink.x += pacman->ghostPinkMove.x;

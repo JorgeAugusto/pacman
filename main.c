@@ -26,6 +26,15 @@ int map[22][19] = {
 	{2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2},
 	{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}};
 
+void			setDefaultPosition(t_pacman *pacman)
+{
+	pacman->pac = (t_pos){17, 20};
+	pacman->ghostRed = (t_pos){6, 8};
+	pacman->ghostYellow = (t_pos){10, 10};
+	pacman->ghostBlue = (t_pos){1, 4};
+	pacman->ghostPink = (t_pos){16, 4};
+}
+
 static void	initDefault(t_pacman *pacman, int *stop)
 {
 	// read textures and set beginning positions of ghosts/pacman
@@ -35,11 +44,7 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->eat = 0;
 	pacman->pacMove = (t_pos){0, 0};
 	
-	pacman->pac = (t_pos){17, 20};
-	pacman->ghostRed = (t_pos){6, 8};
-	pacman->ghostYellow = (t_pos){10, 10};
-	pacman->ghostBlue = (t_pos){1, 4};
-	pacman->ghostPink = (t_pos){16, 4};
+	setDefaultPosition(pacman);
 	pacman->pacmanLives = 3;
 	
 	pacman->ghostRedMapPreviousValue = 0;

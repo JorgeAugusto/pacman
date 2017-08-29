@@ -104,4 +104,5 @@ void				putGhostYellow(t_pacman *pacman);
 void				putGhostPink(t_pacman *pacman);
 void				putTextMessage(t_pacman *pacman, char *str);
 void				intro(t_pacman *pacman, int *introOff);
+void				setDefaultPosition(t_pacman *pacman);
 #endif
