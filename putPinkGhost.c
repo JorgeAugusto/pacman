@@ -13,7 +13,7 @@ void putGhostPink(t_pacman *pacman)
 	
 	//check move down
 	if (map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0] != 2 &&
-		map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0] != 7 &&
+		map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0] != 5 &&
 		map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0] != 6 &&
 		map[pacman->ghostPink.y + 1][pacman->ghostPink.x + 0] != 8)
 	{
@@ -32,7 +32,7 @@ void putGhostPink(t_pacman *pacman)
 	}
 	//check move up
 	if (map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0] != 2 &&
-		map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0] != 7 &&
+		map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0] != 5 &&
 		map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0] != 6 &&
 		map[pacman->ghostPink.y - 1][pacman->ghostPink.x + 0] != 8)
 	{
@@ -51,7 +51,7 @@ void putGhostPink(t_pacman *pacman)
 	}
 	//check move left
 	if (map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1] != 2 &&
-		map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1] != 7 &&
+		map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1] != 5 &&
 		map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1] != 6 &&
 		map[pacman->ghostPink.y + 0][pacman->ghostPink.x + 1] != 8)
 	{
@@ -70,7 +70,7 @@ void putGhostPink(t_pacman *pacman)
 	}
 	//check move right
 	if (map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1] != 2 &&
-		map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1] != 7 &&
+		map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1] != 5 &&
 		map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1] != 6 &&
 		map[pacman->ghostPink.y + 0][pacman->ghostPink.x - 1] != 8)
 	{

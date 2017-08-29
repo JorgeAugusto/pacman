@@ -15,7 +15,7 @@ void putGhostYellow(t_pacman *pacman)
 	if (map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0] != 2 &&
 		map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0] != 7 &&
 		map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0] != 6 &&
-		map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0] != 8)
+		map[pacman->ghostYellow.y + 1][pacman->ghostYellow.x + 0] != 5)
 	{
 		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2) + pow(pacman->ghostYellow.y + 1 - pacman->pac.y,2))) < lenClosest)
 		{
@@ -34,7 +34,7 @@ void putGhostYellow(t_pacman *pacman)
 	if (map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0] != 2 &&
 		map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0] != 7 &&
 		map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0] != 6 &&
-		map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0] != 8)
+		map[pacman->ghostYellow.y - 1][pacman->ghostYellow.x + 0] != 5)
 	{
 		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - pacman->pac.x,2) + pow(pacman->ghostYellow.y - 1 - pacman->pac.y,2))) < lenClosest)
 		{
@@ -53,7 +53,7 @@ void putGhostYellow(t_pacman *pacman)
 	if (map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1] != 2 &&
 		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1] != 7 &&
 		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1] != 6 &&
-		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1] != 8)
+		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x + 1] != 5)
 	{
 		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x + 1 - pacman->pac.x,2) + pow(pacman->ghostYellow.y - pacman->pac.y,2))) < lenClosest)
 		{
@@ -72,7 +72,7 @@ void putGhostYellow(t_pacman *pacman)
 	if (map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1] != 2 &&
 		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1] != 7 &&
 		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1] != 6 &&
-		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1] != 8)
+		map[pacman->ghostYellow.y + 0][pacman->ghostYellow.x - 1] != 5)
 	{
 		if (pacman->eat == 0 && (tmp = sqrt(pow(pacman->ghostYellow.x - 1 - pacman->pac.x,2) + pow(pacman->ghostYellow.y - pacman->pac.y,2))) < lenClosest)
 		{
