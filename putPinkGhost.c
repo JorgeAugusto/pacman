@@ -101,7 +101,7 @@ void putGhostPink(t_pacman *pacman)
 		map[pacman->pac.y][pacman->pac.x] = 0;
 		pacman->pac = (t_pos){17, 20};
 		pacman->pacMove = (t_pos){-1, 0};
-		pacman->ghostPink = (t_pos){6, 8};
+		pacman->ghostRed = (t_pos){6, 8};
 		pacman->ghostYellow = (t_pos){10, 10};
 		pacman->ghostBlue = (t_pos){1, 4};
 		pacman->ghostPink = (t_pos){16, 4};
