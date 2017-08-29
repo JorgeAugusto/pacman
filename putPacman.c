@@ -38,7 +38,7 @@ void putPacman(t_pacman *pacman)
 		}
 		else if (map[pacman->pac.y][pacman->pac.x] == 7 && pacman->eat != 0)
 		{
-			pacman->ghostPinkMapPreviousValue = (map[4][1] == 1) ? 1 : 0;
+			pacman->ghostPinkMapPreviousValue = (map[4][16] == 1) ? 1 : 0;
 			pacman->ghostPink = (t_pos){16, 4};
 			pacman->ghostPinkMove = (t_pos){0, 0};
 			pacman->score += 200;
