@@ -126,24 +126,14 @@ int main(void)
 			sdlRenderClear(pacman);
 			putPacman(pacman);
 			drawMap(pacman);
-			if (ghostOffset % 2)
+			if ((ghostOffset = (ghostOffset == 1) ? 0 : 1 ) % 2)
 			{
 				putGhost(pacman, &pacman->red);
 				putGhost(pacman, &pacman->yellow);
-//				ghostOffset = 0;
-//			}
-//			else
-//			{
 				putGhost(pacman, &pacman->blue);
 				putGhost(pacman, &pacman->pink);
-				
 			}
-			ghostOffset++;
-			
 			checkPosition(pacman);
-			
-			
-			
 			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(250);
 		}
