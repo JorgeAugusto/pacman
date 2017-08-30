@@ -69,7 +69,6 @@ void putGhost(t_pacman *pacman, t_ghost *ghost)
 	{
 		if (pacman->eat == 0 && (lenCurrent = sqrt(pow(ghost->ghostPos.x - 1 - pacman->pac.x,2) + pow(ghost->ghostPos.y - pacman->pac.y,2))) < lenClosest)
 		{
-			lenClosest = lenCurrent;
 			ghost->ghostMove = (t_pos) {-1, 0};
 			ghost->ghostMapPreviousValue = map[ghost->ghostPos.y + 0][ghost->ghostPos.x - 1];
 		}
