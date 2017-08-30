@@ -15,7 +15,7 @@
 		D26517E41F5404CB00F302C2 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D12C61F52BE17001CEFD3 /* SDL2_image.framework */; };
 		D26517E51F5404CB00F302C2 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D12C01F51F0DC001CEFD3 /* SDL2_ttf.framework */; };
 		D26517E61F5404CB00F302C2 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26026231F51614E00D5000A /* SDL2.framework */; };
-		D26517EA1F540F3900F302C2 /* putRedGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517E91F540F3900F302C2 /* putRedGhost.c */; };
+		D26517EA1F540F3900F302C2 /* putGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517E91F540F3900F302C2 /* putGhost.c */; };
 		D26517F21F542A1000F302C2 /* intro.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517F11F542A0F00F302C2 /* intro.c */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		D26026261F51615D00D5000A /* pacman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pacman.h; sourceTree = "<group>"; };
 		D26026281F51644E00D5000A /* drawMap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawMap.c; sourceTree = "<group>"; };
 		D260262A1F51B0CB00D5000A /* putPacman.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putPacman.c; sourceTree = "<group>"; };
-		D26517E91F540F3900F302C2 /* putRedGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putRedGhost.c; sourceTree = "<group>"; };
+		D26517E91F540F3900F302C2 /* putGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putGhost.c; sourceTree = "<group>"; };
 		D26517F11F542A0F00F302C2 /* intro.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = intro.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +68,7 @@
 				D26517F11F542A0F00F302C2 /* intro.c */,
 				D26026201F51612C00D5000A /* main.c */,
 				D260262A1F51B0CB00D5000A /* putPacman.c */,
-				D26517E91F540F3900F302C2 /* putRedGhost.c */,
+				D26517E91F540F3900F302C2 /* putGhost.c */,
 				8A5D12C21F51F2FA001CEFD3 /* putText.c */,
 				D26026261F51615D00D5000A /* pacman.h */,
 				D26026221F51614E00D5000A /* Frameworks */,
@@ -156,7 +156,7 @@
 				D26026271F51615D00D5000A /* initSdl.c in Sources */,
 				8A5D12C31F51F2FA001CEFD3 /* putText.c in Sources */,
 				D26026291F51644E00D5000A /* drawMap.c in Sources */,
-				D26517EA1F540F3900F302C2 /* putRedGhost.c in Sources */,
+				D26517EA1F540F3900F302C2 /* putGhost.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

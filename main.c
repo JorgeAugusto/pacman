@@ -126,14 +126,14 @@ int main(void)
 			drawMap(pacman);
 			if (ghostOffset % 2)
 			{
-				putGhostRed(pacman, &pacman->red);
-				putGhostRed(pacman, &pacman->yellow);
+				putGhost(pacman, &pacman->red);
+				putGhost(pacman, &pacman->yellow);
 //				ghostOffset = 0;
 //			}
 //			else
 //			{
-				putGhostRed(pacman, &pacman->blue);
-				putGhostRed(pacman, &pacman->pink);
+				putGhost(pacman, &pacman->blue);
+				putGhost(pacman, &pacman->pink);
 				
 			}
 			ghostOffset++;
