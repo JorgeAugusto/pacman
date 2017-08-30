@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A5D12C31F51F2FA001CEFD3 /* putText.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D12C21F51F2FA001CEFD3 /* putText.c */; };
+		8A7BB07B1F56AF2400CC845A /* checkPosition.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB07A1F56AF2400CC845A /* checkPosition.c */; };
 		D26026211F51612C00D5000A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026201F51612C00D5000A /* main.c */; };
 		D26026271F51615D00D5000A /* initSdl.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026251F51615D00D5000A /* initSdl.c */; };
 		D26026291F51644E00D5000A /* drawMap.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026281F51644E00D5000A /* drawMap.c */; };
@@ -35,6 +36,7 @@
 		8A5D12C01F51F0DC001CEFD3 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_ttf.framework; sourceTree = "<group>"; };
 		8A5D12C21F51F2FA001CEFD3 /* putText.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = putText.c; sourceTree = "<group>"; };
 		8A5D12C61F52BE17001CEFD3 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_image.framework; sourceTree = "<group>"; };
+		8A7BB07A1F56AF2400CC845A /* checkPosition.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = checkPosition.c; sourceTree = "<group>"; };
 		D26026161F5160DF00D5000A /* pacman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pacman; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26026201F51612C00D5000A /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		D26026231F51614E00D5000A /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		D260260D1F5160DF00D5000A = {
 			isa = PBXGroup;
 			children = (
+				8A7BB07A1F56AF2400CC845A /* checkPosition.c */,
 				D26026281F51644E00D5000A /* drawMap.c */,
 				D26026251F51615D00D5000A /* initSdl.c */,
 				D26517F11F542A0F00F302C2 /* intro.c */,
@@ -153,6 +156,7 @@
 				D26026211F51612C00D5000A /* main.c in Sources */,
 				D260262B1F51B0CB00D5000A /* putPacman.c in Sources */,
 				D26517F21F542A1000F302C2 /* intro.c in Sources */,
+				8A7BB07B1F56AF2400CC845A /* checkPosition.c in Sources */,
 				D26026271F51615D00D5000A /* initSdl.c in Sources */,
 				8A5D12C31F51F2FA001CEFD3 /* putText.c in Sources */,
 				D26026291F51644E00D5000A /* drawMap.c in Sources */,

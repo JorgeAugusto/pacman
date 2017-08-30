@@ -75,35 +75,12 @@ void putGhost(t_pacman *pacman, t_ghost *ghost)
 		}
 		else if (pacman->eat != 0 && (lenCurrent = sqrt(pow(ghost->ghostPos.x - 1 - pacman->pac.x,2) + pow(ghost->ghostPos.y - pacman->pac.y,2))) > lenFarest)
 		{
-			lenFarest = lenCurrent;
 			ghost->ghostMove = (t_pos) {-1, 0};
 			ghost->ghostMapPreviousValue = map[ghost->ghostPos.y + 0][ghost->ghostPos.x - 1];
 		}
-	}
-	
-	if (ghost->ghostMapPreviousValue == 3)
-	{
-		//if U eated by ghost
-		pacman->pacmanLives--;
-		if (pacman->pacmanLives == 0)
-		{
-			putTextMessage(pacman, "You lose");
-			SDL_Delay(1500);
-			exit(0);
-		}
-		map[pacman->pac.y][pacman->pac.x] = 0;
-		setDefaultPosition(pacman);
-		pacman->pacMove = (t_pos){-1, 0};
-		putTextMessage(pacman, "GET READY");
-		sdlRenderClear(pacman);
-		SDL_Delay(1500);
-		ghost->ghostMapPreviousValue = 0;
-		return ;
 	}
 	ghost->ghostPos.x += ghost->ghostMove.x;
 	ghost->ghostPos.y += ghost->ghostMove.y;
 	map[ghost->ghostPos.y][ghost->ghostPos.x] = ghost->id;
 	ghost->ghostRect = (SDL_Rect){ghost->ghostPos.x * 30, ghost->ghostPos.y * 30, 30, 30};
 }
-
-

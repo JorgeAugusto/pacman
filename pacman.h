@@ -90,4 +90,5 @@ void				putGhost(t_pacman *pacman, t_ghost *ghost);
 void				putTextMessage(t_pacman *pacman, char *str);
 void				intro(t_pacman *pacman, int *introOff);
 void				setDefaultPosition(t_pacman *pacman);
+void				checkPosition(t_pacman *pacman);
 #endif

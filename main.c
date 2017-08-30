@@ -33,6 +33,13 @@ void			setDefaultPosition(t_pacman *pacman)
 	pacman->yellow.ghostPos = (t_pos){10, 10};
 	pacman->blue.ghostPos = (t_pos){1, 4};
 	pacman->pink.ghostPos = (t_pos){16, 4};
+	
+	pacman->red.ghostMapPreviousValue = 0;
+	pacman->yellow.ghostMapPreviousValue = 0;
+	pacman->blue.ghostMapPreviousValue = (map[4][1] == 1) ? 1 : 0;
+	pacman->pink.ghostMapPreviousValue = (map[4][16] == 1) ? 1 : 0;
+	
+	pacman->pacMove = (t_pos){-1, 0};
 }
 
 static void	initDefault(t_pacman *pacman, int *stop)
@@ -42,15 +49,9 @@ static void	initDefault(t_pacman *pacman, int *stop)
 	pacman->pause = 0;
 	pacman->score = 0;
 	pacman->eat = 0;
-	pacman->pacMove = (t_pos){0, 0};
 	
 	setDefaultPosition(pacman);
 	pacman->pacmanLives = 3;
-	
-	pacman->red.ghostMapPreviousValue = 0;
-	pacman->blue.ghostMapPreviousValue = 1;
-	pacman->pink.ghostMapPreviousValue = 1;
-	pacman->yellow.ghostMapPreviousValue = 0;
 	
 	pacman->red.id = 5;
 	pacman->blue.id = 6;
@@ -119,6 +120,7 @@ int main(void)
 		}
 		if (introOff == 0)
 			intro(pacman, &introOff);
+		
 		if (pacman->pause == 0)
 		{
 			sdlRenderClear(pacman);
@@ -137,6 +139,11 @@ int main(void)
 				
 			}
 			ghostOffset++;
+			
+			checkPosition(pacman);
+			
+			
+			
 			SDL_RenderPresent(pacman->sdl.renderer);
 			SDL_Delay(250);
 		}
