@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A5D12C31F51F2FA001CEFD3 /* putText.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D12C21F51F2FA001CEFD3 /* putText.c */; };
-		8A5D12C51F52A5A2001CEFD3 /* putPinkGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D12C41F52A5A2001CEFD3 /* putPinkGhost.c */; };
 		D26026211F51612C00D5000A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026201F51612C00D5000A /* main.c */; };
 		D26026271F51615D00D5000A /* initSdl.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026251F51615D00D5000A /* initSdl.c */; };
 		D26026291F51644E00D5000A /* drawMap.c in Sources */ = {isa = PBXBuildFile; fileRef = D26026281F51644E00D5000A /* drawMap.c */; };
@@ -17,8 +16,6 @@
 		D26517E51F5404CB00F302C2 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D12C01F51F0DC001CEFD3 /* SDL2_ttf.framework */; };
 		D26517E61F5404CB00F302C2 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26026231F51614E00D5000A /* SDL2.framework */; };
 		D26517EA1F540F3900F302C2 /* putRedGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517E91F540F3900F302C2 /* putRedGhost.c */; };
-		D26517EC1F540F6100F302C2 /* putYellowGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517EB1F540F6100F302C2 /* putYellowGhost.c */; };
-		D26517EE1F54109900F302C2 /* putBlueGhost.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517ED1F54109900F302C2 /* putBlueGhost.c */; };
 		D26517F21F542A1000F302C2 /* intro.c in Sources */ = {isa = PBXBuildFile; fileRef = D26517F11F542A0F00F302C2 /* intro.c */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +34,6 @@
 /* Begin PBXFileReference section */
 		8A5D12C01F51F0DC001CEFD3 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_ttf.framework; sourceTree = "<group>"; };
 		8A5D12C21F51F2FA001CEFD3 /* putText.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = putText.c; sourceTree = "<group>"; };
-		8A5D12C41F52A5A2001CEFD3 /* putPinkGhost.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = putPinkGhost.c; sourceTree = "<group>"; };
 		8A5D12C61F52BE17001CEFD3 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_image.framework; sourceTree = "<group>"; };
 		D26026161F5160DF00D5000A /* pacman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pacman; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26026201F51612C00D5000A /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -47,8 +43,6 @@
 		D26026281F51644E00D5000A /* drawMap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawMap.c; sourceTree = "<group>"; };
 		D260262A1F51B0CB00D5000A /* putPacman.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putPacman.c; sourceTree = "<group>"; };
 		D26517E91F540F3900F302C2 /* putRedGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putRedGhost.c; sourceTree = "<group>"; };
-		D26517EB1F540F6100F302C2 /* putYellowGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putYellowGhost.c; sourceTree = "<group>"; };
-		D26517ED1F54109900F302C2 /* putBlueGhost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = putBlueGhost.c; sourceTree = "<group>"; };
 		D26517F11F542A0F00F302C2 /* intro.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = intro.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,12 +67,9 @@
 				D26026251F51615D00D5000A /* initSdl.c */,
 				D26517F11F542A0F00F302C2 /* intro.c */,
 				D26026201F51612C00D5000A /* main.c */,
-				D26517ED1F54109900F302C2 /* putBlueGhost.c */,
 				D260262A1F51B0CB00D5000A /* putPacman.c */,
-				8A5D12C41F52A5A2001CEFD3 /* putPinkGhost.c */,
 				D26517E91F540F3900F302C2 /* putRedGhost.c */,
 				8A5D12C21F51F2FA001CEFD3 /* putText.c */,
-				D26517EB1F540F6100F302C2 /* putYellowGhost.c */,
 				D26026261F51615D00D5000A /* pacman.h */,
 				D26026221F51614E00D5000A /* Frameworks */,
 				D26026171F5160DF00D5000A /* Products */,
@@ -160,13 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D26026211F51612C00D5000A /* main.c in Sources */,
-				8A5D12C51F52A5A2001CEFD3 /* putPinkGhost.c in Sources */,
 				D260262B1F51B0CB00D5000A /* putPacman.c in Sources */,
-				D26517EE1F54109900F302C2 /* putBlueGhost.c in Sources */,
 				D26517F21F542A1000F302C2 /* intro.c in Sources */,
 				D26026271F51615D00D5000A /* initSdl.c in Sources */,
 				8A5D12C31F51F2FA001CEFD3 /* putText.c in Sources */,
-				D26517EC1F540F6100F302C2 /* putYellowGhost.c in Sources */,
 				D26026291F51644E00D5000A /* drawMap.c in Sources */,
 				D26517EA1F540F3900F302C2 /* putRedGhost.c in Sources */,
 			);

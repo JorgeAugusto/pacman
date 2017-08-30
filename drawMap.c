@@ -57,13 +57,13 @@ void	drawMap(t_pacman *pacman)
 				SDL_RenderCopy(pacman->sdl.renderer, pacman->pacTexture, NULL, &(pacman->pacRect));
 			}
 			else if (map[y][x] == 5) //red ghost
-				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->ghostRedTexture : pacman->ghostEatTexture, NULL, &(pacman->ghostRedRect));
+				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->red.ghostTexture : pacman->ghostEatTexture, NULL, &(pacman->red.ghostRect));
 			else if (map[y][x] == 6) //blue ghost
-				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->ghostBlueTexture : pacman->ghostEatTexture, NULL, &(pacman->ghostBlueRect));
+				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->blue.ghostTexture : pacman->ghostEatTexture, NULL, &(pacman->blue.ghostRect));
 			else if (map[y][x] == 7) //pink ghost
-				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->ghostPinkTexture : pacman->ghostEatTexture, NULL, &(pacman->ghostPinkRect));
+				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->pink.ghostTexture : pacman->ghostEatTexture, NULL, &(pacman->pink.ghostRect));
 			else if (map[y][x] == 8) //yellow ghost
-				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->ghostYellowTexture : pacman->ghostEatTexture, NULL, &(pacman->ghostYellowRect));
+				SDL_RenderCopy(pacman->sdl.renderer, (pacman->eat == 0) ? pacman->yellow.ghostTexture : pacman->ghostEatTexture, NULL, &(pacman->yellow.ghostRect));
 			rect.x += 30;
 			rect = (SDL_Rect) {rect.x, rect.y, rect.h, rect.w};
 		}

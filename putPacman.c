@@ -24,30 +24,30 @@ void putPacman(t_pacman *pacman)
 		}
 		else if (map[pacman->pac.y][pacman->pac.x] == 5 && pacman->eat != 0)
 		{
-			pacman->ghostRedMapPreviousValue = 0;
-			pacman->ghostRed = (t_pos){9, 10};
-			pacman->ghostRedMove = (t_pos){0, 0};
+			pacman->red.ghostMapPreviousValue = 0;
+			pacman->red.ghostPos = (t_pos){9, 10};
+			pacman->red.ghostMove = (t_pos){0, 0};
 			pacman->score += 200;
 		}
 		else if (map[pacman->pac.y][pacman->pac.x] == 6 && pacman->eat != 0)
 		{
-			pacman->ghostBlue = (t_pos){1, 4};
-			pacman->ghostBlueMapPreviousValue = (map[4][1] == 1) ? 1 : 0;
-			pacman->ghostBlueMove = (t_pos){0, 0};
+			pacman->blue.ghostPos = (t_pos){1, 4};
+			pacman->blue.ghostMapPreviousValue = (map[4][1] == 1) ? 1 : 0;
+			pacman->blue.ghostMove = (t_pos){0, 0};
 			pacman->score += 200;
 		}
 		else if (map[pacman->pac.y][pacman->pac.x] == 7 && pacman->eat != 0)
 		{
-			pacman->ghostPinkMapPreviousValue = (map[4][16] == 1) ? 1 : 0;
-			pacman->ghostPink = (t_pos){16, 4};
-			pacman->ghostPinkMove = (t_pos){0, 0};
+			pacman->pink.ghostMapPreviousValue = (map[4][16] == 1) ? 1 : 0;
+			pacman->pink.ghostPos = (t_pos){16, 4};
+			pacman->pink.ghostMove = (t_pos){0, 0};
 			pacman->score += 200;
 		}
 		else if (map[pacman->pac.y][pacman->pac.x] == 8 && pacman->eat != 0)
 		{
-			pacman->ghostYellowMapPreviousValue = 0;
-			pacman->ghostYellow = (t_pos){10, 10};
-			pacman->ghostYellowMove = (t_pos){0, 0};
+			pacman->yellow.ghostMapPreviousValue = 0;
+			pacman->yellow.ghostPos = (t_pos){10, 10};
+			pacman->yellow.ghostMove = (t_pos){0, 0};
 			pacman->score += 200;
 		}
 		map[pacman->pac.y][pacman->pac.x] = 3;

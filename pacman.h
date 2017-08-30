@@ -31,6 +31,17 @@ typedef struct		s_pos
 	int				y;
 }					t_pos;
 
+typedef struct		s_ghost
+{
+	t_pos			ghostPos;
+	t_pos			ghostMove;
+	SDL_Surface		*ghostImage;
+	SDL_Texture		*ghostTexture;
+	SDL_Rect			ghostRect;
+	int				ghostMapPreviousValue;
+	int				id;
+}					t_ghost;
+
 typedef struct		s_pacman
 {
 	t_sdl			sdl;
@@ -45,33 +56,10 @@ typedef struct		s_pacman
 	SDL_Rect		pacRect;
 	int				pacmanLives;
 	
-	t_pos			ghostRed;
-	t_pos			ghostRedMove;
-	SDL_Surface		*ghostRedImage;
-	SDL_Texture		*ghostRedTexture;
-	SDL_Rect		ghostRedRect;
-	int				ghostRedMapPreviousValue;
-	
-	t_pos			ghostBlue;
-	t_pos			ghostBlueMove;
-	SDL_Surface		*ghostBlueImage;
-	SDL_Texture		*ghostBlueTexture;
-	SDL_Rect		ghostBlueRect;
-	int				ghostBlueMapPreviousValue;
-	
-	t_pos			ghostYellow;
-	t_pos			ghostYellowMove;
-	SDL_Surface		*ghostYellowImage;
-	SDL_Texture		*ghostYellowTexture;
-	SDL_Rect		ghostYellowRect;
-	int				ghostYellowMapPreviousValue;
-	
-	t_pos			ghostPink;
-	t_pos			ghostPinkMove;
-	SDL_Surface		*ghostPinkImage;
-	SDL_Texture		*ghostPinkTexture;
-	SDL_Rect		ghostPinkRect;
-	int				ghostPinkMapPreviousValue;
+	t_ghost			red;
+	t_ghost			blue;
+	t_ghost			pink;
+	t_ghost			yellow;
 	
 
 	SDL_Surface		*buttonImage;
@@ -98,7 +86,7 @@ void				drawMap(t_pacman *pacman);
 void				putPacman(t_pacman *pacman);
 void				putScore(t_pacman *pacman);
 void				setLivesLevel(t_pacman *pacman);
-void				putGhostRed(t_pacman *pacman);
+void				putGhostRed(t_pacman *pacman, t_ghost *red);
 void				putGhostBlue(t_pacman *pacman);
 void				putGhostYellow(t_pacman *pacman);
 void				putGhostPink(t_pacman *pacman);
