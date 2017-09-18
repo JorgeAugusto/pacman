@@ -12,6 +12,7 @@ void	sdlInit(t_pacman *pacman)
 			SDL_RENDERER_ACCELERATED);
 	SDL_SetRenderDrawColor(pacman->sdl.renderer, 0, 0, 0, 255);
 	SDL_RenderClear(pacman->sdl.renderer);
+	pacman->sdl.font = TTF_OpenFont("arcadeclassic/ARCADECLASSIC.TTF", 22);
 }
 
 void	sdlDestroy(t_pacman *pacman)
